@@ -18,8 +18,8 @@ class CreateCourseReviewsTable extends Migration {
 			$table->integer('courseID')->unsigned();
 			$table->integer('reviewID')->unsigned();
 
-			$table->foreign('courseID')->references('courseID')->on('courses');
-            $table->foreign('reviewID')->references('reviewID')->on('reviews');
+			// $table->foreign('courseID')->references('courseID')->on('courses');
+   //          $table->foreign('reviewID')->references('reviewID')->on('reviews');
 		});
 	}
 

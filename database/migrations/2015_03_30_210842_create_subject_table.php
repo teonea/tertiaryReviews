@@ -16,7 +16,7 @@ class CreateSubjectTable extends Migration {
 		{
 			$table->increments('subjectID');
 			$table->integer('courseID')->unsigned();
-			$table->text('subject');
+			$table->text('subjectName');
 
 			$table->foreign('courseID')->references('courseID')->on('courses');
 		});

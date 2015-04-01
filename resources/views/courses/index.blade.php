@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('page-wrapper')
+@section('content')
 
 
 <h1>Courses</h1>

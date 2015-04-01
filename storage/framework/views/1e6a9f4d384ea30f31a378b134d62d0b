@@ -1,0 +1,15 @@
+<?php $__env->startSection('page-wrapper'); ?>
+
+
+<h1>Reviews</h1>
+
+<?php foreach($reviews as $review): ?>
+
+<h2><a href="<?php echo e(url('/reviews', $review->id)); ?>"><?php echo e($review->title); ?></a></h2>
+<p><?php echo e($review->courseType); ?></p>
+
+<?php endforeach; ?>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

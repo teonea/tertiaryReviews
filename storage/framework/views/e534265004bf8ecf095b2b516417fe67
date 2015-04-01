@@ -1,0 +1,13 @@
+<?php $__env->startSection('page-wrapper'); ?>
+
+
+<h1>Schools</h1>
+
+<?php foreach($schools as $school): ?>
+
+<h2><a href="<?php echo e(url('/schools', $school->id)); ?>"><?php echo e($school->title); ?></a></h2>
+
+<?php endforeach; ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

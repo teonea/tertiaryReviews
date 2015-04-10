@@ -3,13 +3,18 @@
 @section('content')
 
 
-<h1>Courses</h1>
+<h1>{!! link_to('courses', 'Courses') !!}</h1>
 
-@foreach ($courses as $course)
+<hr />
 
-<h2><a href="{{ url('/courses', $course->id) }}">{{ $course->title }}</a></h2>
+<ul class="item-list">
+	@foreach ($courses as $course)
+	<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a></li>
+	<hr />
+	@endforeach
+</ul>
 
-@endforeach
+
 
 
 @stop

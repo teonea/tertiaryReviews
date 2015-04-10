@@ -20,8 +20,8 @@
 				<li>{!! link_to('home', 'Home') !!}</li>
 				<li>{!! link_to('reviews', 'Reviews') !!}</li>
 				<li>{!! link_to('courses', 'Courses') !!}</li>
-				<li>{!! link_to('reviews/writeReview', 'Write a Review') !!}</li>
-				<li><a href="search.html"><i class="fa fa-search"></i></a></li>
+				<li>{!! link_to('reviews/create', 'Write a Review') !!}</li>
+				<li><a href="{{ url('search') }}"><i class="fa fa-search"></i></a></li>
 			</ul>
 		</nav>
 
@@ -34,6 +34,7 @@
 		<footer>
 			<ul>
 				<li>Copyright &copy; 2015</li>
+				<li>{!! link_to('login', 'Log In') !!}</li>
 				<li>{!! link_to('about', 'About') !!}</li>
 				<li>{!! link_to('contact', 'Contact') !!}</li>
 				<li>{!! link_to('sitemap', 'Site Map') !!}</li>

@@ -6,7 +6,7 @@ class Course extends Model {
 
 	public function school() {
 
-		return $this->belongsTo('School');
+		return $this->belongsTo('App\School');
 
 	}
 

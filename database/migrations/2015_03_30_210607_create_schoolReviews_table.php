@@ -18,8 +18,8 @@ class CreateSchoolReviewsTable extends Migration {
 			$table->integer('schoolID')->unsigned();
 			$table->integer('reviewID')->unsigned();
 
-            $table->foreign('schoolID')->references('schoolID')->on('schools');
-            $table->foreign('reviewID')->references('reviewID')->on('reviews');
+            $table->foreign('schoolID')->references('id')->on('schools');
+            $table->foreign('reviewID')->references('id')->on('reviews');
 			$table->timestamps();
 		});
 	}

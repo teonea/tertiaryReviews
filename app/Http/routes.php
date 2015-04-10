@@ -17,14 +17,15 @@ Route::get('home', 'WelcomeController@home');
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 
-Route::get('reviews', 'ReviewsController@index');
-Route::get('reviews/writeReview', 'ReviewsController@writeReview');
-Route::get('reviews/{id}', 'ReviewsController@show');
-Route::post('reviews', 'ReviewsController@store');
+Route::resource('reviews', 'ReviewsController');
 
+Route::get('search', 'SearchController@index');
+Route::get('searchResults', 'SearchController@searchResults');
 
 Route::get('courses', 'CoursesController@index');
 Route::get('courses/{id}', 'CoursesController@show');
 
 Route::get('schools', 'SchoolsController@index');
 Route::get('schools/{id}', 'SchoolsController@show');
+
+Route::resource('schools', 'SchoolsController');

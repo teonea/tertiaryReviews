@@ -2,7 +2,12 @@
 
 @section('content')
 
-<h1>Course Title</h1>
+<h1>{!! link_to('courses', 'Courses') !!} / {{ $course->schoolID }} / {{ $course->courseName }}</h1>
+
+<hr />
+
+<h2>{{ $course->courseName }}</h2>
+
 
 
 @stop

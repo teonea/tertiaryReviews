@@ -14,7 +14,7 @@ class CreateReviewsTable extends Migration {
 	{
 		Schema::create('reviews', function(Blueprint $table)
 		{
-			$table->increments('reviewID');
+			$table->increments('id');
 			$table->string('title');
 			$table->text('courseType');
 			$table->text('favouriteAspects');
@@ -26,7 +26,6 @@ class CreateReviewsTable extends Migration {
 			$table->integer('jobProspectsRating');
 			$table->integer('overallRating');
 			$table->timestamps();
-			$table->timestamp('publishedAt');
 
 		});
 	}

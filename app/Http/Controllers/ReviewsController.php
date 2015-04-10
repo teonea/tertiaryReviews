@@ -2,8 +2,10 @@
 
 use App\Review;
 use App\Http\Requests;
+use App\Http\Requests\ReviewRequest;
+use Illuminate\Http\Request;
+use Illuminate\HttpResponse;
 use App\Http\Controllers\Controller;
-use Request;
 
 class ReviewsController extends Controller {
 
@@ -11,12 +13,11 @@ class ReviewsController extends Controller {
 
 	public function index() {
 
-		$reviews = Review::latest('publishedAt')->get();
+		$reviews = Review::latest('created_at')->get();
 
 		return view('reviews.index', compact('reviews'));
 
 	}
-
 
 	public function show($id) {
 
@@ -27,21 +28,35 @@ class ReviewsController extends Controller {
 	}
 
 
-	public function writeReview() {
+	public function create() {
 
-		return view('reviews.writeReview');
+		return view('reviews.create');
 
 	}
 
-	public function store() {
+	public function store(ReviewRequest $request) {
 
-		$input = Request::all();
-
-		Review::create($input);
+		Review::create($request->all());
 
 		return redirect('reviews');
 
 	}
 
+	public function edit($id) {
+
+		$review = Review::findOrFail($id);
+		return view('reviews.edit', compact('review'));
+
+	}
+
+	public function update($id , ReviewRequest $request) {
+
+		$review = Review::findOrFail($id);
+
+		$review->update($request->all());
+
+		return redirect('reviews');
+
+	}
 
 }

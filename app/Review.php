@@ -10,14 +10,9 @@ class Review extends Model {
 		'courseType',
 		'favouriteAspects',
 		'leastFavouriteAspects',
-		'courseReview',
-		'facilitiesRating',
-		'clarityRating',
-		'helpfulnessRating',
-		'jobProspectsRating',
-		'overallRating',
-		'publishedAt'
+		'courseReview'
 	];
 
+	
 
 }

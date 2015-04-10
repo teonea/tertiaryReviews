@@ -14,7 +14,7 @@ class CreateSchoolsTable extends Migration {
 	{
 		Schema::create('schools', function(Blueprint $table)
 		{
-			$table->increments('schoolID');
+			$table->increments('id');
 			$table->text('schoolName');
 			$table->text('schoolPhone');
 			$table->text('schoolFax');
@@ -28,7 +28,6 @@ class CreateSchoolsTable extends Migration {
 			$table->text('schoolPostalAddress2');
 			$table->text('schoolPostCode');
 			$table->text('regionName');
-			$table->timestamps();
 		});
 	}
 

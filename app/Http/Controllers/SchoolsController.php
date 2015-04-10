@@ -10,8 +10,7 @@ class SchoolsController extends Controller {
 
 	public function index() {
 
-		$schools = School::all();
-
+		$schools = School::orderBy('schoolName', 'ASC')->paginate(15);
 		return view('schools.index', compact('schools'));
 
 	}
@@ -24,5 +23,11 @@ class SchoolsController extends Controller {
 		return view('schools.show', compact('school'));
 
 	}
+
+	public function paginate() {
+
+	}
+
+	
 
 }

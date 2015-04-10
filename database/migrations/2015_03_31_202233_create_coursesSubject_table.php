@@ -14,12 +14,12 @@ class CreateCoursesSubjectTable extends Migration {
 	{
 		Schema::create('coursesSubject', function(Blueprint $table)
 		{
-			$table->increments('coursesSubjectID');
-			$table->integer('courseID')->unsigned();
-			$table->integer('subjectID')->unsigned();
+			$table->increments('coursesSubject_id');
+			$table->integer('course_id')->unsigned();
+			$table->integer('subject_id')->unsigned();
 
-			$table->foreign('courseID')->references('id')->on('courses');
-            $table->foreign('subjectID')->references('id')->on('subject');
+			$table->foreign('course_id')->references('id')->on('courses');
+            $table->foreign('subject_id')->references('id')->on('subject');
 			$table->timestamps();
 		});
 	}

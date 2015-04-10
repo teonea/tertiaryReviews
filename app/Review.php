@@ -13,6 +13,12 @@ class Review extends Model {
 		'courseReview'
 	];
 
+
+	public function course() {
+
+		return $this->belongsTo('App\Course');
+
+	}
 	
 
 }

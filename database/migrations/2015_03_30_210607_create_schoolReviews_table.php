@@ -14,12 +14,12 @@ class CreateSchoolReviewsTable extends Migration {
 	{
 		Schema::create('schoolReviews', function(Blueprint $table)
 		{
-			$table->increments('schoolReviewID');
-			$table->integer('schoolID')->unsigned();
-			$table->integer('reviewID')->unsigned();
+			$table->increments('schoolReview_id');
+			$table->integer('school_id')->unsigned();
+			$table->integer('review_id')->unsigned();
 
-            $table->foreign('schoolID')->references('id')->on('schools');
-            $table->foreign('reviewID')->references('id')->on('reviews');
+            $table->foreign('school_id')->references('id')->on('schools');
+            $table->foreign('review_id')->references('id')->on('reviews');
 			$table->timestamps();
 		});
 	}

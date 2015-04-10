@@ -16,9 +16,9 @@ class CreateCoursesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->text('courseName');
-			$table->integer('schoolID')->unsigned();
+			$table->integer('school_id')->unsigned();
 
-			$table->foreign('schoolID')->references('id')->on('schools')->onDelete('cascade');
+			$table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
 			
 		});
 	}

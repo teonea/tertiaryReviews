@@ -24,6 +24,16 @@ class SchoolsController extends Controller {
 
 	}
 
+	public function showcourses($id) {
+
+		// $school = School::where('schoolName', '$id');
+
+		// $courses = $school->courses;
+
+		return view('schools.showcourses', compact('courses'));
+
+	}
+
 	public function paginate() {
 
 	}

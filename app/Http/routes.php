@@ -16,6 +16,10 @@ Route::get('home', 'WelcomeController@home');
 
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
+Route::get('privacyPolicy', 'PagesController@privacyPolicy');
+Route::get('sitemap', 'PagesController@sitemap');
+Route::get('termsAndConditions', 'PagesController@termsAndConditions');
+
 
 Route::resource('reviews', 'ReviewsController');
 
@@ -27,5 +31,6 @@ Route::get('courses/{id}', 'CoursesController@show');
 
 Route::get('schools', 'SchoolsController@index');
 Route::get('schools/{id}', 'SchoolsController@show');
+Route::get('schools/courses/{id}', 'SchoolsController@showcourses');
 
 Route::resource('schools', 'SchoolsController');

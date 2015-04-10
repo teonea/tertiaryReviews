@@ -8,25 +8,36 @@ use Illuminate\Http\Request;
 class PagesController extends Controller {
 
 
-
-	//display about page
+	//display static pages
 	public function about() {
 
-		$data = [];
-		$data['name'] = 'Hannah Teonea';
-		return view('pages.about', $data);
+		return view('pages.about');
 
 	}
 
-	//display about page
 	public function contact() {
 
-		$data = [];
-		$data['name'] = 'Hannah Teonea';
-		return view('pages.contact', $data);
+		return view('pages.contact');
 
 	}
 
+	public function privacyPolicy() {
 
+		return view('pages.privacyPolicy');
+
+	}
+
+	public function sitemap() {
+
+		return view('pages.sitemap');
+
+	}
+
+	public function termsAndConditions() {
+
+		return view('pages.termsAndConditions');
+
+	}
+	
 
 }

@@ -2,7 +2,10 @@
 
 @section('content')
 
-<h1>Terms &amp; Conditions</h1>
+<h1>Hi</h1>
+
 <hr />
+
+
 
 @stop

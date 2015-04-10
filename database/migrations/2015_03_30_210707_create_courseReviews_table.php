@@ -14,12 +14,12 @@ class CreateCourseReviewsTable extends Migration {
 	{
 		Schema::create('courseReviews', function(Blueprint $table)
 		{
-			$table->increments('courseReviewID');
-			$table->integer('courseID')->unsigned();
-			$table->integer('reviewID')->unsigned();
+			$table->increments('courseReview_id');
+			$table->integer('course_id')->unsigned();
+			$table->integer('review_id')->unsigned();
 
-			$table->foreign('courseID')->references('id')->on('courses');
-            $table->foreign('reviewID')->references('id')->on('reviews');
+			$table->foreign('course_id')->references('id')->on('courses');
+            $table->foreign('review_id')->references('id')->on('reviews');
 
 		});
 	}

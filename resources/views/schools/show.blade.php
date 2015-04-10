@@ -18,7 +18,7 @@
 	<li>{{ $school->schoolPostCode }}</li>
 </ul>
 
-<h3>View {{ $school->schoolName }} Courses</h3>
+<h3><a href="{{ url('/schools/courses/{id}', $school->id) }}">View {{ $school->schoolName }} Courses</a></h3>
 
 <h3>View {{ $school->schoolName }} Reviews</h3>
 

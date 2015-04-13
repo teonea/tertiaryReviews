@@ -15,6 +15,12 @@ class School extends Model {
 
 	}
 
+	public function reviews() {
+
+		return $this->hasMany('App\Review');
+
+	}
+
 	public function getSchoolsName() {
 
 		return School::where('id', $this->school_id)->first()->schoolName;

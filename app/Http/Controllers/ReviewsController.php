@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\Review;
+use App\Course;
+use App\School;
 use App\Http\Requests;
 use App\Http\Requests\ReviewRequest;
 use Illuminate\Http\Request;
@@ -21,9 +23,13 @@ class ReviewsController extends Controller {
 
 	public function show($id) {
 
-		$review = Review::findOrFail($id);
+		$review = Review::where('id', $id)->with('course')->get();
 
-		return view('reviews.show', compact('review'));
+		$school = School::findOrFail($id);
+
+		$course = Course::all();
+
+		return view('reviews.show', compact('review', 'school', 'course'));
 
 	}
 

@@ -19,6 +19,12 @@ class Review extends Model {
 		return $this->belongsTo('App\Course');
 
 	}
+
+	public function school() {
+
+		return $this->belongsTo('App\School');
+
+	}
 	
 
 }

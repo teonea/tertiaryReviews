@@ -8,8 +8,16 @@
 
 <div class="individual-review">
 	
+	<ul class="item-list">
+	@foreach ($review->course as $course)
+	<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a></li>
+	<hr />
+	@endforeach
+</ul>
+
 	<h2>{{ $review->title }}</h2>
 
+	<h3></h3>
 	<p>What school, what course???</p>
 
 	<p>{{ $review->courseType }}</p>

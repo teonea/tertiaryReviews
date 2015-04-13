@@ -18,9 +18,9 @@
 	<li>{{ $school->schoolPostCode }}</li>
 </ul>
 
-<h3><a href="{{ url('/schools/courses/{id}', $school->id) }}">View {{ $school->schoolName }} Courses</a></h3>
+<h3>{!! link_to_action('SchoolsController@showcourses', 'View Courses', $school->id) !!}</h3>
 
-<h3>View {{ $school->schoolName }} Reviews</h3>
+<h3>{!! link_to_action('ReviewsController@show', 'View Reviews', $school->id) !!}</h3>
 
 
 @stop

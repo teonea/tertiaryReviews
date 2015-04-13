@@ -19,7 +19,7 @@
 			<ul>
 				<li>{!! link_to('home', 'Home') !!}</li>
 				<li>{!! link_to('reviews', 'Reviews') !!}</li>
-				<li>{!! link_to('courses', 'Courses') !!}</li>
+				<li>{!! link_to('schools', 'Schools') !!}</li>
 				<li>{!! link_to('reviews/create', 'Write a Review') !!}</li>
 				<li><a href="{{ url('search') }}"><i class="fa fa-search"></i></a></li>
 			</ul>

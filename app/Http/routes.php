@@ -31,6 +31,6 @@ Route::get('courses/{id}', 'CoursesController@show');
 
 Route::get('schools', 'SchoolsController@index');
 Route::get('schools/{id}', 'SchoolsController@show');
-Route::get('schools/courses/{id}', 'SchoolsController@showcourses');
+Route::get('schools/{id}/courses', 'SchoolsController@showcourses');
 
 Route::resource('schools', 'SchoolsController');

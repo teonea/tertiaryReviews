@@ -8,6 +8,4 @@
 
 <h2>{{ $course->courseName }}</h2>
 
-
-
 @stop

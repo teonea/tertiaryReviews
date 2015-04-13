@@ -45,6 +45,7 @@ class ReviewsController extends Controller {
 	public function edit($id) {
 
 		$review = Review::findOrFail($id);
+		
 		return view('reviews.edit', compact('review'));
 
 	}

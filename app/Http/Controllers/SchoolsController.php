@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\School;
+use App\Course;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -11,6 +12,7 @@ class SchoolsController extends Controller {
 	public function index() {
 
 		$schools = School::orderBy('schoolName', 'ASC')->paginate(15);
+
 		return view('schools.index', compact('schools'));
 
 	}
@@ -24,19 +26,21 @@ class SchoolsController extends Controller {
 
 	}
 
+
 	public function showcourses($id) {
 
-		// $school = School::where('schoolName', '$id');
+		$data = School::where('id', $id)->with('courses')->get();
 
-		// $courses = $school->courses;
+		$school = School::findOrFail($id);
 
-		return view('schools.showcourses', compact('courses'));
+		$course = Course::all();
 
-	}
-
-	public function paginate() {
+		return view('schools.showcourses', compact('data', 'school', 'course'));
 
 	}
+
+
+	
 
 	
 

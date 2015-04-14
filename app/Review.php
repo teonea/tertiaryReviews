@@ -14,7 +14,7 @@ class Review extends Model {
 	];
 
 
-	public function course() {
+	public function courses() {
 
 		return $this->belongsTo('App\Course');
 
@@ -25,6 +25,8 @@ class Review extends Model {
 		return $this->belongsTo('App\School');
 
 	}
+
+	
 	
 
 }

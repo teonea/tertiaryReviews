@@ -21,6 +21,7 @@ class CoursesController extends Controller {
 
 		$course = Course::findOrFail($id);
 
+		
 		return view('courses.show', compact('course'));
 
 	}

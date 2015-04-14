@@ -47,6 +47,14 @@ h2 {
 	margin-top: 20px;
 }
 
+h3 {
+	color: #4D4D4D;
+	font-family: 'Ubuntu', Arial, sans-serif;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 1.5em;
+}
+
 .scrollToTop {
 	width:100px; 
 	height:130px;

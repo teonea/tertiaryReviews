@@ -10,18 +10,20 @@ class Course extends Model {
 
 	}
 
+	public function reviews() {
+
+		return $this->hasMany('App\Review');
+
+	}
+
 	public function getSchoolName() {
 
 		return School::where('id', $this->school_id)->first()->schoolName;
 
 	}
 
+	
 
-
-	public function review() {
-
-		return $this->hasMany('App\Review');
-
-	}
+	
 
 }

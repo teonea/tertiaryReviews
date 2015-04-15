@@ -14,7 +14,7 @@ class Review extends Model {
 	];
 
 
-	public function courses() {
+	public function course() {
 
 		return $this->belongsTo('App\Course');
 
@@ -26,6 +26,11 @@ class Review extends Model {
 
 	}
 
+	public function getCourseName() {
+
+		return Course::where('id', $this->course_id)->first()->courseName;
+
+	}
 	
 	
 

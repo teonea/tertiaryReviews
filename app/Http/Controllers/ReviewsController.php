@@ -23,13 +23,10 @@ class ReviewsController extends Controller {
 
 	public function show($id) {
 
-		$review = Review::where('id', $id)->with('course')->get();
+		$review = Review::findOrFail($id);
 
-		$school = School::findOrFail($id);
+		return view('reviews.show', compact('review'));
 
-		$course = Course::all();
-
-		return view('reviews.show', compact('review', 'school', 'course'));
 
 	}
 

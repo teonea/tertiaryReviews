@@ -8,7 +8,24 @@
 
 <h2>{{ $course->courseName }}</h2>
 
-<h3>This course is offered at {{ $course->getSchoolName() }}</h3>
+<p>Below are the unbiased, honest reviews listed for {{ $course->courseName }} which is offered at {{ $course->getSchoolName() }}</p>
+
+@foreach ($course->review as $review)
+<h3><a href="{{ url('/reviews', $review->id) }}">{{ $review->title }}</a></h3>
+<p>{{ $review->courseType }}</p>
+<p>{{ $review->favouriteAspects }}</p>
+	<p>{{ $review->leastFavouriteAspects }}</p>
+	<p>{{ $review->courseReview }}</p>
+
+	<ul>
+		<li>{{ $review->facilitiesRating }}</li>
+		<li>{{ $review->clarityRating }}</li>
+		<li>{{ $review->helpfulnessRating }}</li>
+		<li>{{ $review->jobProspectsRating }}</li>
+		<li>{{ $review->overallRating }}</li>
+	</ul>
+<hr />
+@endforeach
 
 
 @stop

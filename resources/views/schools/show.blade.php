@@ -19,10 +19,7 @@
 </ul>
 
 
-
-<h3>{!! link_to_action('SchoolsController@showcourses', 'View Courses', $school->id) !!}</h3>
-
-<h3>{!! link_to_action('ReviewsController@show', 'View Reviews', $school->id) !!}</h3>
+<h4>{!! link_to_action('SchoolsController@showcourses', 'View Courses', $school->id) !!}</h4>
 
 
 @stop

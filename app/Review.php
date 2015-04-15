@@ -26,9 +26,9 @@ class Review extends Model {
 
 	}
 
-	public function getCourseName() {
+	public function getSchoolName() {
 
-		return Course::where('id', $this->course_id)->first()->courseName;
+		return School::where('id', $this->school_id)->first()->schoolName;
 
 	}
 	

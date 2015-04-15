@@ -1,16 +1,16 @@
 <div>
     {!! Form::label('schoolName', 'Tertiary Education Provider', $attributes = ['class' => 'wr-form']) !!}
-    {!! form::select('schoolName') !!}
+    {!! form::select('schoolName', $school, null) !!}
 </div>
 
 <div>
     {!! Form::label('name', 'Subject') !!}
-    {!! form::select('$subject->$subjectTitle') !!}
+    {!! form::select('subjectName', $subject, null) !!}
 </div>
 
 <div>
     {!! Form::label('name', 'Course') !!}
-    {!! form::select('$courses->$courseName') !!}
+    {!! form::select('courseName', $course, null) !!}
 </div>
 
 <div>

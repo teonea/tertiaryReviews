@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Subject;
 use App\Review;
 use App\Course;
 use App\School;
@@ -33,7 +34,11 @@ class ReviewsController extends Controller {
 
 	public function create() {
 
-		return view('reviews.create');
+		$school = School::lists('schoolName', 'id');
+		$course = Course::lists('courseName', 'id');
+		$subject = Subject::lists('subjectName', 'id');
+
+		return view('reviews.create', compact('school', 'course', 'subject'));
 
 	}
 

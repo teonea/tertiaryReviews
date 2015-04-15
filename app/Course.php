@@ -16,6 +16,12 @@ class Course extends Model {
 
 	}
 
+	public function subject() {
+
+		return $this->hasMany('App\Subject');
+
+	}
+
 	public function getSchoolName() {
 
 		return School::where('id', $this->school_id)->first()->schoolName;

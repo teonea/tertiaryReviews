@@ -27,8 +27,12 @@ class CreateReviewsTable extends Migration {
 			$table->integer('overallRating');
 			$table->timestamps();
 			$table->integer('course_id')->unsigned();
+			$table->integer('school_id')->unsigned();
+			$table->integer('subject_id')->unsigned();
 
 			$table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+			$table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
+			$table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
 
 		});
 	}

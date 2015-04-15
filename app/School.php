@@ -15,7 +15,7 @@ class School extends Model {
 
 	}
 
-	public function reviews() {
+	public function review() {
 
 		return $this->hasMany('App\Review');
 

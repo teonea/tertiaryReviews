@@ -18,7 +18,7 @@ class Course extends Model {
 
 	public function subject() {
 
-		return $this->hasMany('App\Subject');
+		return $this->belongsTo('App\Subject');
 
 	}
 

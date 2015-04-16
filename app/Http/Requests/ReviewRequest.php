@@ -22,11 +22,19 @@ class ReviewRequest extends Request {
 	public function rules()
 	{
 		return [
+			'school_id' => 'required',
+			'course_id' => 'required',
+			'subject_id' => 'required',
 			'title' => 'required|min:3',
 			'courseType' => 'required|min:30',
 			'favouriteAspects' => 'required|min:50',
 			'leastFavouriteAspects' => 'required|min:50',
-			'courseReview' => 'required|min:100'
+			'courseReview' => 'required|min:100',
+			'facilitiesRating' => 'integer|required|min:1|max:5',
+			'clarityRating' => 'integer|required|min:1|max:5',
+			'helpfulnessRating' => 'integer|required|min:1|max:5',
+			'jobProspectsRating' => 'integer|required|min:1|max:5',
+			'overallRating' => 'integer|required|min:1|max:5'
 		];
 	}
 

@@ -16,7 +16,7 @@ class ReviewsController extends Controller {
 
 	public function index() {
 
-		$reviews = Review::latest('created_at')->get();
+		$reviews = Review::latest('created_at')->paginate(15);
 
 		return view('reviews.index', compact('reviews'));
 
@@ -44,8 +44,9 @@ class ReviewsController extends Controller {
 
 	public function store(ReviewRequest $request) {
 
+
 		Review::create($request->all());
-		dd($request);
+		
 		return redirect('reviews');
 
 	}

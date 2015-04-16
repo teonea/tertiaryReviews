@@ -6,6 +6,9 @@ class Review extends Model {
 
 	
 	protected $fillable = [
+		'course_id',
+		'school_id',
+		'subject_id',
 		'title',
 		'courseType',
 		'favouriteAspects',
@@ -15,12 +18,14 @@ class Review extends Model {
 		'clarityRating',
 		'helpfulnessRating',
 		'jobProspectsRating',
-		'overallRating',
-		'course_id',
-		'school_id',
-		'subject_id'
+		'overallRating'
 	];
 
+	protected $guarded = [
+		'id'
+	];
+
+	protected $table = 'reviews';
 
 	public function course() {
 
@@ -31,6 +36,12 @@ class Review extends Model {
 	public function school() {
 
 		return $this->belongsTo('App\School');
+
+	}
+
+	public function subject() {
+
+		return $this->belongsTo('App\Subject');
 
 	}
 

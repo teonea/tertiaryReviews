@@ -1,16 +1,16 @@
 <div>
     {!! Form::label('schoolName', 'Tertiary Education Provider', $attributes = ['class' => 'wr-form']) !!}
-    {!! form::select('schoolName', $school, null) !!}
+    {!! form::select('school_id', $school, null) !!}
 </div>
 
 <div>
     {!! Form::label('name', 'Subject') !!}
-    {!! form::select('subjectName', $subject, null) !!}
+    {!! form::select('subject_id', $subject, null) !!}
 </div>
 
 <div>
     {!! Form::label('name', 'Course') !!}
-    {!! form::select('courseName', $course, null) !!}
+    {!! form::select('course_id', $course, null) !!}
 </div>
 
 <div>
@@ -38,24 +38,23 @@
 	{!! Form::textarea('courseReview', null, $attributes = ['placeholder' => 'Is it what you expected? What would you have wanted to know before enrolling for your course? Did classes run on time? How was the social atmosphere?', 'rows' => '12']) !!}
 </div>
 
-
 <div>
 	{!! Form::label('facilitiesRating', 'Facilities Rating') !!}
-	{!! Form::text('facilitiesRating', null) !!}
+	{!! Form::input('number', 'facilitiesRating', null) !!}
 </div>
 <div>
 	{!! Form::label('clarityRating', 'Clarity Rating') !!}
-	{!! Form::text('clarityRating', null) !!}
+	{!! Form::input('number', 'clarityRating', null) !!}
 </div>
 <div>
 	{!! Form::label('helpfulnessRating', 'Helpfulness Rating') !!}
-	{!! Form::text('helpfulnessRating', null) !!}
+	{!! Form::input('number', 'helpfulnessRating', null) !!}
 </div>
 <div>
 	{!! Form::label('jobProspectsRating', 'Job Prospects Rating') !!}
-	{!! Form::text('jobProspectsRating', null) !!}
+	{!! Form::input('number', 'jobProspectsRating', null) !!}
 </div>
 <div>
 	{!! Form::label('overallRating', 'Overall Rating') !!}
-	{!! Form::text('overallRating', null) !!}
+	{!! Form::input('number', 'overallRating', null) !!}
 </div>

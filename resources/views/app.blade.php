@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="{{ asset('/css/responsive-nav.css') }}"/>
 	<link rel="stylesheet" href="{{ asset('/css/responsive-styles.css') }}"/>
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700|Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<title></title>
 </head>
 <body>
@@ -30,7 +30,7 @@
 		<div class="content">
 			@yield('content')
 		</div>
-			
+    
 		<footer>
 			<ul>
 				<li>Copyright &copy; 2015</li>
@@ -45,14 +45,9 @@
 
 	</div>
 
-	
-
-	
-
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="{{ asset('/js/responsive-nav.js') }}"></script>
 	<script src="{{ asset('/js/scrollToTop.js') }}"></script>
-
 
 </body>
 </html>

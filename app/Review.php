@@ -10,7 +10,15 @@ class Review extends Model {
 		'courseType',
 		'favouriteAspects',
 		'leastFavouriteAspects',
-		'courseReview'
+		'courseReview',
+		'facilitiesRating',
+		'clarityRating',
+		'helpfulnessRating',
+		'jobProspectsRating',
+		'overallRating',
+		'course_id',
+		'school_id',
+		'subject_id'
 	];
 
 
@@ -29,6 +37,12 @@ class Review extends Model {
 	public function getSchoolName() {
 
 		return School::where('id', $this->school_id)->first()->schoolName;
+
+	}
+
+	public function getSubjectName() {
+
+		return Subject::where('id', $this->subject_id)->first()->subjectName;
 
 	}
 	

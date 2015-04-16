@@ -31,7 +31,7 @@ h1 a {
 }
 
 h1 a:hover {
-	color: #4D4D4D;
+	color: #777;
 }
 
 h1 a:active {
@@ -47,7 +47,7 @@ h2 {
 	margin-top: 20px;
 }
 
-h3 {
+h3, h3 a {
 	color: #4D4D4D;
 	font-family: 'Ubuntu', Arial, sans-serif;
 	font-weight: normal;
@@ -112,6 +112,10 @@ h4, h4 a {
 	font-family: 'Ubuntu', Arial, sans-serif;
 	font-size: 15px;
 	margin-bottom: 40px;
+}
+
+.b {
+	font-weight: bold;
 }
 
 label, #wr-form a {
@@ -210,6 +214,19 @@ form {
 
 .pagination li a:active {
 	color: #4D4D4D;
+}
+
+.review {
+	border: 3px solid #142E42;
+	border-radius: 12px;
+	padding: 10px 30px 20px 30px;
+	margin: 30px 0;
+}
+
+.review h3 {
+	margin: 0;
+	font-size: 16px;
+	font-weight: lighter;
 }
 
 footer {

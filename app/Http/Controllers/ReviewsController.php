@@ -45,7 +45,7 @@ class ReviewsController extends Controller {
 	public function store(ReviewRequest $request) {
 
 		Review::create($request->all());
-
+		dd($request);
 		return redirect('reviews');
 
 	}
@@ -63,6 +63,7 @@ class ReviewsController extends Controller {
 		$review = Review::findOrFail($id);
 
 		$review->update($request->all());
+
 
 		return redirect('reviews');
 

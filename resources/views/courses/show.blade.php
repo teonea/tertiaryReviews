@@ -8,12 +8,16 @@
 
 <h2>{{ $course->courseName }}</h2>
 
-<p>Below are the unbiased, honest reviews listed for {{ $course->courseName }} which is offered at {{ $course->getSchoolName() }}</p>
+<p>Below are the unbiased, honest reviews listed for <span class="b">{{ $course->courseName }}</span> which is offered at <span class="b">{{ $course->getSchoolName() }}</span>.</p>
 
 @foreach ($course->review as $review)
-<h3><a href="{{ url('/reviews', $review->id) }}">{{ $review->title }}</a></h3>
-<p>{{ $review->courseType }}</p>
-<p>{{ $review->favouriteAspects }}</p>
+<div class="review">
+	<h1><a href="{{ url('/reviews', $review->id) }}">{{ $review->title }}</a></h1>
+	<h3>Tertiary Education Provider:  <span class="b">{{ $review->getSchoolName() }}</span></h3>	
+	<h3>Subject:  <span class="b">{{ $review->getSubjectName() }}</span></h3>
+	<h3>Course:  <span class="b">{{ $review->course->courseName }}</span></h3>
+	<p>{{ $review->courseType }}</p>
+	<p>{{ $review->favouriteAspects }}</p>
 	<p>{{ $review->leastFavouriteAspects }}</p>
 	<p>{{ $review->courseReview }}</p>
 
@@ -24,6 +28,8 @@
 		<li>{{ $review->jobProspectsRating }}</li>
 		<li>{{ $review->overallRating }}</li>
 	</ul>
+</div>
+
 <hr />
 @endforeach
 

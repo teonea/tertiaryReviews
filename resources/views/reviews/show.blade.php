@@ -5,14 +5,11 @@
 <h1>{!! link_to('reviews', 'Reviews') !!} / {{ $review->title }}</h1>
 
 <hr />
-
+<div class="review">
 	<h2>{{ $review->title }}</h2>
-
-
-<h3>Tertiary Education Provider: {{ $review->getSchoolName() }}</h3>
-
-	
-	<h3>Course: <span>{{ $review->course->courseName }}</span></h3>
+	<h3>Tertiary Education Provider:  <span class="b">{{ $review->getSchoolName() }}</span></h3>	
+	<h3>Subject:  <span class="b">{{ $review->getSubjectName() }}</span></h3>
+	<h3>Course:  <span class="b">{{ $review->course->courseName }}</span></h3>
 
 	<p>{{ $review->courseType }}</p>
 	<p>{{ $review->favouriteAspects }}</p>
@@ -31,4 +28,6 @@
 	<h4>{!! link_to_action('CoursesController@show', 'Read more reviews on this course here', $review->course_id) !!}</h4>
 	<h4>{!! link_to_action('SchoolsController@show', 'Check out this school here', $review->school_id) !!}</h4>
 
+</div>
+	
 @stop

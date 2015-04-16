@@ -37,3 +37,25 @@
 	{!! Form::label('courseReview', 'Overall Review') !!}
 	{!! Form::textarea('courseReview', null, $attributes = ['placeholder' => 'Is it what you expected? What would you have wanted to know before enrolling for your course? Did classes run on time? How was the social atmosphere?', 'rows' => '12']) !!}
 </div>
+
+
+<div>
+	{!! Form::label('facilitiesRating', 'Facilities Rating') !!}
+	{!! Form::text('facilitiesRating', null) !!}
+</div>
+<div>
+	{!! Form::label('clarityRating', 'Clarity Rating') !!}
+	{!! Form::text('clarityRating', null) !!}
+</div>
+<div>
+	{!! Form::label('helpfulnessRating', 'Helpfulness Rating') !!}
+	{!! Form::text('helpfulnessRating', null) !!}
+</div>
+<div>
+	{!! Form::label('jobProspectsRating', 'Job Prospects Rating') !!}
+	{!! Form::text('jobProspectsRating', null) !!}
+</div>
+<div>
+	{!! Form::label('overallRating', 'Overall Rating') !!}
+	{!! Form::text('overallRating', null) !!}
+</div>

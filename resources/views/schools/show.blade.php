@@ -8,11 +8,11 @@
 
 <h2>{{ $school->schoolName }}</h2>
 
-<ul>
-	<li><a href="{{ $school->schoolWebsite }}" target="_blank">{{ $school->schoolWebsite }}</a></li>
-	<li><i class="fa fa-phone"> {{ $school->schoolPhone }}</i></li>
-	<li><i class="fa fa-fax"> {{ $school->schoolFax }}</i></li>
-	<li><i class="fa fa-map-marker">{{ $school->schoolStreet }}</i></li>
+<ul class="school-show">
+	<li class="pink b"><a href="{{ $school->schoolWebsite }}" target="_blank">{{ $school->schoolWebsite }}</a></li>
+	<li>{{ $school->schoolPhone }}</li>
+	<li>{{ $school->schoolFax }}</li>
+	<li>{{ $school->schoolStreet }}</li>
 	<li>{{ $school->schoolSuburb }}</li>
 	<li>{{ $school->schoolCity }}</li>
 	<li>{{ $school->schoolPostCode }}</li>

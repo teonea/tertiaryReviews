@@ -19,6 +19,9 @@ a:hover {
 /* ------------------------------------------
   BASE DEMO STYLES
 --------------------------------------------- */
+nav {
+  background-color: #142E42;
+}
 
 body {
   -webkit-text-size-adjust: 100%;
@@ -51,7 +54,6 @@ section {
 
 .nav-collapse,
 .nav-collapse * {
-  background-color: #142E42;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -71,16 +73,24 @@ section {
 
 @media screen and (min-width: 40em) {
   .nav-collapse li {
-    width: 200px;
+    width: 160px;
     float: left;
   }
 }
 
+.nav-collapse p {
+  position: absolute;
+  right: 50px;
+}
+
 @media screen and (min-width: 40em) {
-  .nav-collapse li:last-child {
+  .nav-collapse p a {
     position: absolute;
-    right: -160px;
-    top: 30px;
+    float: right;
+    right: 0px;
+    top: 28px;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -107,6 +117,14 @@ section {
   border-bottom: 1px solid #F5F5F5;
   padding: 1em;
   float: left;
+}
+
+.nav-collapse a:hover {
+  color: #F05759;
+}
+
+.nav-collapse a:active {
+  color: #eee;
 }
 
 @media screen and (min-width: 40em) {

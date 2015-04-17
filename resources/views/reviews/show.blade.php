@@ -5,6 +5,7 @@
 <h1>{!! link_to('reviews', 'Reviews') !!} / {{ $review->title }}</h1>
 
 <hr />
+
 <div class="review">
 	<h2>{{ $review->title }}</h2>
 	<h3>Tertiary Education Provider:  <span class="b">{{ $review->getSchoolName() }}</span></h3>	

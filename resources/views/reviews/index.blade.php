@@ -16,5 +16,6 @@
 
 @endforeach
 
+{!! $reviews->render() !!}
 
 @stop

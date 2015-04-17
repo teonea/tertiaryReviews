@@ -14,7 +14,6 @@
 	@endforeach
 </ul>
 
-
-
+{!! $courses->render() !!}
 
 @stop

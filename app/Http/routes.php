@@ -23,10 +23,21 @@ Route::get('termsAndConditions', 'PagesController@termsAndConditions');
 
 Route::resource('reviews', 'ReviewsController');
 
-Route::get('search', 'SearchController@index');
-Route::get('searchResults', 'SearchController@searchResults');
+Route::get('courses', 'CoursesController@index', function()
+{
+	
+    $query = Request::get('q');
 
-Route::get('courses', 'CoursesController@index');
+		$courses = $query
+
+		? Course::search($query)->get()
+
+		: Course::all();
+
+return view('courses.index', compact('courses'));
+
+});
+//Route::get('courses', 'CoursesController@index');
 Route::get('courses/{id}', 'CoursesController@show');
 
 Route::get('schools', 'SchoolsController@index');
@@ -34,3 +45,6 @@ Route::get('schools/{id}', 'SchoolsController@show');
 Route::get('schools/{id}/courses', 'SchoolsController@showcourses');
 
 Route::resource('schools', 'SchoolsController');
+
+
+//Route::get('search', 'SearchController@index');

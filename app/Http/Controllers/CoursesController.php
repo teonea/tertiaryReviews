@@ -16,12 +16,17 @@ class CoursesController extends Controller {
 
 	}
 
-
 	public function show($id) {
 
 		$course = Course::findOrFail($id);
 
 		return view('courses.show', compact('course'));
+
+	}
+
+	public function scopeSearch($query, $search) {
+
+		return $query->where('courseName', 'LIKE', "%$search%");
 
 	}
 

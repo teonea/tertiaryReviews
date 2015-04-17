@@ -7,12 +7,34 @@
 
 <hr />
 
-<ul class="item-list">
-	@foreach ($courses as $course)
-	<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a></li>
-	<hr />
-	@endforeach
-</ul>
+<h2>Search by Course</h2>
+
+{!! Form::open(['method' => 'GET']) !!}
+	
+	<div>
+		{!! Form::input('search', 'q', null, $attributes = ['placeholder' => 'Enter Keywords']) !!}
+	</div>
+
+{!! Form::close() !!}
+
+
+@if (count($courses) >= 1)
+
+	<ul class="item-list">
+		@foreach ($courses as $course)
+		<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a></li>
+		<hr />
+		@endforeach
+	</ul>
+
+@else
+	
+	<p>No Results</p>
+
+@endif
+
+
+
 
 {!! $courses->render() !!}
 

@@ -31,19 +31,17 @@ class ReviewsController extends Controller {
 
 	}
 
-
 	public function create() {
 
-		$school = School::lists('schoolName', 'id');
-		$course = Course::lists('courseName', 'id');
-		$subject = Subject::lists('subjectName', 'id');
+		$school = School::orderBy('schoolName', 'ASC')->lists('schoolName', 'id');
+		$course = Course::orderBy('courseName', 'ASC')->lists('courseName', 'id');
+		$subject = Subject::orderBy('subjectName', 'ASC')->lists('subjectName', 'id');
 
 		return view('reviews.create', compact('school', 'course', 'subject'));
 
 	}
 
 	public function store(ReviewRequest $request) {
-
 
 		Review::create($request->all());
 		

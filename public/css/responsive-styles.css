@@ -21,6 +21,7 @@ a:hover {
 --------------------------------------------- */
 nav {
   background-color: #142E42;
+  height: 110px;
 }
 
 body {
@@ -138,15 +139,10 @@ section {
 }
 
 .nav-collapse ul ul a {
-  background: #ca3716;
-  padding-left: 1em;
+  background: #142E42;
+  margin-right: 20px;
 }
 
-@media screen and (min-width: 40em) {
-  .nav-collapse ul ul a {
-    display: none;
-  }
-}
 
 
 /* ------------------------------------------

@@ -15,7 +15,7 @@
 	<li>{{ $school->schoolStreet }}</li>
 	<li>{{ $school->schoolSuburb }}</li>
 	<li>{{ $school->schoolCity }}</li>
-	<li>{{ $school->schoolPostCode }}</li>
+	<li>{{ $school->regionName }}</li>
 </ul>
 
 

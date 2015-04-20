@@ -47,3 +47,71 @@
     display: none;
   }
 }
+
+.dropdown ul a {
+  background: #b63315;
+  padding-left: 1.5em;
+}
+
+.dropdown ul ul a {
+  background: #81230e;
+  padding-left: 2.5em;
+}
+
+@media screen and (min-width: 40em) {
+  .js .nav-collapse .dropdown ul {
+    display: none;
+  }
+}
+
+
+.dropdown ul li a {
+  color: #fff;
+  z-index: 100;
+}
+
+.dropdown ul ul {
+  border: 0;
+  padding: 0;
+}
+
+.dropdown .dropdown.opened .dropdown-toggle {
+  background: #9c2c12;
+}
+
+@media screen and (min-width: 40em) {
+  .js .nav-collapse,
+  .js .nav-collapse .dropdown ul {
+    max-height: none;
+    overflow: visible;
+  }
+  .nav-collapse a:hover {
+    color: rgba(255,255,255, .7);
+  }
+  .nav-collapse .dropdown {
+    position: relative;
+  }
+  .nav-collapse .dropdown li {
+    width: 100%;
+  }
+  .nav-collapse .dropdown ul a {
+    text-align: left;
+    border: 0;
+  }
+  .js .nav-collapse .dropdown:hover > ul {
+    clip: auto;
+    position: absolute;
+    width: 10em;
+    top: 3.4em;
+    left: 0;
+    display: block !important;
+  }
+  .js .nav-collapse .dropdown .dropdown:hover > ul {
+    top: 0;
+    left: 10em;
+  }
+  .js .nav-collapse ul > .dropdown:last-child ul {
+    left: auto;
+    right: 0;
+  }
+}

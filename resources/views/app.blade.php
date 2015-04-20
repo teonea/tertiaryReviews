@@ -18,8 +18,17 @@
 			<a href="{!! URL::to('home') !!}"><img src="{{ asset('/img/logo.png') }}" alt="Tertiary Reviews"></a>
 			<ul>
 				<li>{!! link_to('home', 'Home') !!}</li>
-				<li>{!! link_to('courses', 'Courses') !!}</li>
-				<li>{!! link_to('schools', 'Schools') !!}</li>
+				<li class="dropdown">
+					<a href="{!! URL::to('courses') !!}" class="dropdown-toggle">Courses</a>
+					<ul>
+						<li>{!! link_to('courses/create', 'List a Course') !!}</li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="{!! URL::to('schools') !!}" class="dropdown-toggle">Schools</a>
+					<ul>
+						<li>{!! link_to('schools/create', 'List a School') !!}</li>
+					</ul>
 				<li>{!! link_to('reviews', 'Reviews') !!}</li>
 				<li>{!! link_to('reviews/create', 'Write a Review') !!}</li>
 			</ul>
@@ -35,8 +44,8 @@
 		<footer>
 			<ul>
 				<li>Copyright &copy; 2015</li>
-				<li>{!! link_to('login', 'Log In') !!}</li>
-				<li>{!! link_to('about', 'About') !!}</li>
+				<li>{!! link_to('auth/login', 'Log In') !!}</li>
+				<li>{!! link_to('auth\register', 'Register(Changethis)') !!}</li>
 				<li>{!! link_to('contact', 'Contact') !!}</li>
 				<li>{!! link_to('sitemap', 'Site Map') !!}</li>
 				<li>{!! link_to('termsAndConditions', 'Terms &amp; Conditions') !!}</li>

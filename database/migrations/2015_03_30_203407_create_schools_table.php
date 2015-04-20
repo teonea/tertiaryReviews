@@ -24,9 +24,6 @@ class CreateSchoolsTable extends Migration {
 			$table->text('schoolStreet');
 			$table->text('schoolSuburb');
 			$table->text('schoolCity');
-			$table->text('schoolPostalAddress1');
-			$table->text('schoolPostalAddress2');
-			$table->text('schoolPostCode');
 			$table->text('regionName');
 		});
 	}

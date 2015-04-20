@@ -11,7 +11,7 @@
 @if (count($course->review) >= 1)
     <p>Below are the unbiased, honest reviews listed for <span class="b">{{ $course->courseName }}</span> which is offered at <span class="b">{{ $course->getSchoolName() }}</span>.</p>
 
-@foreach ($course->review as $review)
+	@foreach ($course->review as $review)
 	<div class="review">
 		<h1><a href="{{ url('/reviews', $review->id) }}">{{ $review->title }}</a></h1>
 		<h3>Tertiary Education Provider:  <span class="b">{{ $review->getSchoolName() }}</span></h3>	
@@ -33,7 +33,7 @@
 
 	<hr />
 	@endforeach
-@else (count($course->review) < 1)
+@else
     <h4>Sorry, we do not have any reviews listed for this course.</h4>
     <h4>Have you taken this course? We would love for you to take the time to <span class="pink b">{!! link_to('reviews/create', 'Write a Review.') !!}</span></h4>
 @endif

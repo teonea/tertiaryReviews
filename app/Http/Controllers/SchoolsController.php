@@ -3,6 +3,7 @@
 use App\School;
 use App\Course;
 use App\Http\Requests;
+use App\Http\Requests\SchoolRequest;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -17,7 +18,6 @@ class SchoolsController extends Controller {
 
 	}
 
-
 	public function show($id) {
 
 		$school = School::findOrFail($id);
@@ -25,7 +25,6 @@ class SchoolsController extends Controller {
 		return view('schools.show', compact('school'));
 
 	}
-
 
 	public function showcourses($id) {
 
@@ -39,9 +38,38 @@ class SchoolsController extends Controller {
 
 	}
 
+	public function create() {
 
-	
+		return view('schools.create');
 
+	}
+
+	public function store(SchoolRequest $request) {
+
+
+		School::create($request->all());
+		
+		return redirect('schools');
+
+	}
+
+	public function edit($id) {
+
+		$school = School::findOrFail($id);
+		
+		return view('schools.edit', compact('school'));
+
+	}
+
+	public function update($id , SchoolRequest $request) {
+
+		$school = School::findOrFail($id);
+
+		$school->update($request->all());
+
+		return redirect('schools');
+
+	}
 	
 
 }

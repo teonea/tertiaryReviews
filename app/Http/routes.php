@@ -20,31 +20,16 @@ Route::get('privacyPolicy', 'PagesController@privacyPolicy');
 Route::get('sitemap', 'PagesController@sitemap');
 Route::get('termsAndConditions', 'PagesController@termsAndConditions');
 
-
 Route::resource('reviews', 'ReviewsController');
 
-Route::get('courses', 'CoursesController@index', function()
-{
-	
-    $query = Request::get('q');
-
-		$courses = $query
-
-		? Course::search($query)->get()
-
-		: Course::all();
-
-return view('courses.index', compact('courses'));
-
-});
-//Route::get('courses', 'CoursesController@index');
-Route::get('courses/{id}', 'CoursesController@show');
-
-Route::get('schools', 'SchoolsController@index');
-Route::get('schools/{id}', 'SchoolsController@show');
-Route::get('schools/{id}/courses', 'SchoolsController@showcourses');
+Route::resource('courses', 'CoursesController');
 
 Route::resource('schools', 'SchoolsController');
+Route::get('schools/{id}/courses', 'SchoolsController@showcourses');
 
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
 
 //Route::get('search', 'SearchController@index');

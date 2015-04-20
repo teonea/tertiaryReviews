@@ -4,10 +4,26 @@ use Illuminate\Database\Eloquent\Model;
 
 class School extends Model {
 
-	protected $fillable = [
-		'schoolName'
+	public $timestamps = false;
 
+	protected $fillable = [
+		'schoolName',
+		'schoolPhone',
+		'schoolFax',
+		'schoolWebsite',
+		'schoolType',
+		'schoolAuthority',
+		'schoolStreet',
+		'schoolSuburb',
+		'schoolCity',
+		'regionName'
 	];
+
+	protected $guarded = [
+		'id'
+	];
+
+	protected $table = 'schools';
 
 	public function courses() {
 

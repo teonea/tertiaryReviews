@@ -11,6 +11,12 @@ use Illuminate\Http\Request;
 
 class CoursesController extends Controller {
 
+	public function __construct() {
+
+		$this->middleware('auth', ['only' => 'edit']);
+
+	}
+
 	public function index() {
 
 		$courses = Course::orderBy('courseName', 'ASC')->paginate(15);

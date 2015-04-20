@@ -10,6 +10,12 @@ use Illuminate\Http\Request;
 
 class SchoolsController extends Controller {
 
+	public function __construct() {
+
+		$this->middleware('auth', ['only' => 'create', 'edit']);
+
+	}
+
 	public function index() {
 
 		$schools = School::orderBy('schoolName', 'ASC')->paginate(15);

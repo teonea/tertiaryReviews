@@ -12,9 +12,15 @@ use App\Http\Controllers\Controller;
 
 class ReviewsController extends Controller {
 
+	public function __construct() {
 
+		$this->middleware('auth', ['only' => 'edit']);
+
+	}
 
 	public function index() {
+
+		//$loggedInUser = Auth::user()->name;
 
 		$reviews = Review::latest('created_at')->paginate(15);
 

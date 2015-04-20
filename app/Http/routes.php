@@ -27,6 +27,8 @@ Route::resource('courses', 'CoursesController');
 Route::resource('schools', 'SchoolsController');
 Route::get('schools/{id}/courses', 'SchoolsController@showcourses');
 
+Route::get('admin', 'AdminController@index');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

@@ -14,11 +14,14 @@
 Route::get('/', 'WelcomeController@index');
 Route::get('home', 'WelcomeController@home');
 
+
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 Route::get('privacyPolicy', 'PagesController@privacyPolicy');
 Route::get('sitemap', 'PagesController@sitemap');
 Route::get('termsAndConditions', 'PagesController@termsAndConditions');
+
+Route::resource('user', 'UserController');
 
 Route::resource('reviews', 'ReviewsController');
 
@@ -26,8 +29,10 @@ Route::resource('courses', 'CoursesController');
 
 Route::resource('schools', 'SchoolsController');
 Route::get('schools/{id}/courses', 'SchoolsController@showcourses');
+Route::get('schools/destroy/{id}', 'SchoolsController@destroy');
+Route::get('schools/edit/{id}', 'SchoolsController@edit');
 
-Route::get('admin', 'AdminController@index');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

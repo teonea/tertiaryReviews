@@ -5,14 +5,14 @@ use App\Course;
 use App\Http\Requests;
 use App\Http\Requests\SchoolRequest;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
 class SchoolsController extends Controller {
 
 	public function __construct() {
 
-		$this->middleware('auth', ['only' => 'create', 'edit']);
+		$this->middleware('auth', ['only' => 'create', 'edit', 'destroy']);
 
 	}
 
@@ -77,5 +77,14 @@ class SchoolsController extends Controller {
 
 	}
 	
+	public function destroy($id)
+	{	
+		$school = School::findOrFail($id);
+
+		$school->delete();
+
+        return Redirect::route('schools.index')->with('message', 'School successfully deleted');
+
+	}
 
 }

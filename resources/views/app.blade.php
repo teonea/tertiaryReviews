@@ -35,6 +35,13 @@
 			<p><a href="{{ url('search') }}"><i class="fa fa-search"></i></a></p>
 		</nav>
 
+		@if(Auth::check())
+		<div id="login-name">
+			<p><a href="{!! URL::to('user') !!}">{{ Auth::user()->name }}</a></p>
+		</div>
+		@endif
+		
+
 		<a href="#00" class="scrollToTop"><i class="fa fa-chevron-up fa-5x"></i></a>
 
 		<div class="content">
@@ -44,8 +51,12 @@
 		<footer>
 			<ul>
 				<li>Copyright &copy; 2015</li>
-				<li>{!! link_to('auth/login', 'Log In') !!}</li>
-				<li>{!! link_to('auth\register', 'Register(Changethis)') !!}</li>
+				@if(Auth::check())
+					<li>{!! link_to('auth/logout', 'Log Out') !!}</li>
+				@else
+					<li>{!! link_to('auth/login', 'Log In') !!}</li>
+				@endif
+				<li>{!! link_to('about', 'About') !!}</li>
 				<li>{!! link_to('contact', 'Contact') !!}</li>
 				<li>{!! link_to('sitemap', 'Site Map') !!}</li>
 				<li>{!! link_to('termsAndConditions', 'Terms &amp; Conditions') !!}</li>

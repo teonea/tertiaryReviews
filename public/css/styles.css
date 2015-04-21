@@ -165,6 +165,11 @@ form {
 	margin: 30px 0 30px 0;
 }
 
+.delete-list-item {
+	float: right;
+	margin-right: 8px;
+}
+
 .item-list {
 	padding-left: 0;
 	list-style: none;
@@ -207,6 +212,26 @@ form {
 
 #wr-form div input[type='checkbox'] {
 	color: #4D4D4D;
+}
+
+#login-name {
+	right: 0px;
+	position: absolute;
+	padding: 6px 22px 6px 22px;
+	background-color: #F05759;
+	z-index: 10;
+}
+
+#login-name a {
+	color: #142E42;
+	text-decoration: none;
+	font-weight: bold;
+	letter-spacing: 1.2px;
+	font-size: 17px;
+}
+
+#login-name a:hover {
+	color: #fff;
 }
 
 .pagination {

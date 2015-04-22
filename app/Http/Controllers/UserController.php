@@ -2,6 +2,7 @@
 
 use App\User;
 use App\Http\Requests;
+use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -21,9 +22,9 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		
 
-		return view('user.index');
+		return view('user.index', compact('user'));
+
 	}
 
 	/**
@@ -68,6 +69,7 @@ class UserController extends Controller {
 	public function edit($id)
 	{
 		$user = User::findOrFail($id);
+
 		return view('user.edit', compact('user'));
 	}
 

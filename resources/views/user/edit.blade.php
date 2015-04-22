@@ -5,17 +5,29 @@
 <h1>Edit User Details / {{ Auth::user()->name }} </h1>
 
 <hr />
-<!-- 
-{!! Form::model($school, ['method' => 'PATCH', 'action' => 'SchoolsController@update', $school->id]) !!}
+
+{!! Form::model($user, ['method' => 'PATCH', 'action' => ['UserController@update', Auth::user()->id]]) !!}
 	
-	@include('schools.form')
+	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 	<div>
-		{!! Form::submit('Edit School') !!}
+		{!! Form::label('name', 'Name') !!}
+		{!! Form::text('name', null) !!}
+	</div>
+
+	<div>
+		{!! Form::label('email', 'Email') !!}
+		{!! Form::text('email', null) !!}
+	</div>
+
+	<input type="hidden" name="password" value="{{ Auth::user()->password }}">
+
+	<div>
+		{!! Form::submit('Edit Details') !!}
 	</div>
 
 {!! Form::close() !!}
 
-@include('errors.list') -->
+@include('errors.list')
 
 @stop

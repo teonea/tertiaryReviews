@@ -6,7 +6,7 @@
 
 <hr />
 
-{!! Form::model($review, ['method' => 'PATCH', 'action' => 'ReviewsController@update', $review->id]) !!}
+{!! Form::model($review, ['method' => 'PATCH', 'action' => ['ReviewsController@update', $review->id]]) !!}
 	
 	@include('reviews.form')
 

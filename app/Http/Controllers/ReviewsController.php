@@ -6,6 +6,7 @@ use App\Course;
 use App\School;
 use App\Http\Requests;
 use App\Http\Requests\ReviewRequest;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\HttpResponse;
 use App\Http\Controllers\Controller;
@@ -51,6 +52,8 @@ class ReviewsController extends Controller {
 
 		Review::create($request->all());
 		
+		session()->flash('flash_message', 'Review successfully posted!');
+
 		return redirect('reviews');
 
 	}
@@ -58,8 +61,11 @@ class ReviewsController extends Controller {
 	public function edit($id) {
 
 		$review = Review::findOrFail($id);
+		$school = School::orderBy('schoolName', 'ASC')->lists('schoolName', 'id');
+		$course = Course::orderBy('courseName', 'ASC')->lists('courseName', 'id');
+		$subject = Subject::orderBy('subjectName', 'ASC')->lists('subjectName', 'id');
 		
-		return view('reviews.edit', compact('review'));
+		return view('reviews.edit', compact('review', 'school', 'course', 'subject'));
 
 	}
 
@@ -69,8 +75,21 @@ class ReviewsController extends Controller {
 
 		$review->update($request->all());
 
+		session()->flash('flash_message', 'Review successfully edited!');
 
 		return redirect('reviews');
+
+	}
+
+	public function destroy($id)
+	{	
+		$review = Review::findOrFail($id);
+
+		$review->delete();
+
+		session()->flash('flash_message', 'Review successfully deleted!');
+
+        return Redirect::route('reviews.index')->with('message', 'Review successfully deleted');
 
 	}
 

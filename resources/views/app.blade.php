@@ -35,6 +35,15 @@
 			<p><a href="{{ url('search') }}"><i class="fa fa-search"></i></a></p>
 		</nav>
 
+		@if(Session::has('flash_message'))
+			<div class="success-msg fail-msg">
+				<p>
+					{{ Session::get('flash_message') }}
+					<button type="button" id="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				</p>
+			</div>
+		@endif
+
 		@if(Auth::check())
 		<div id="login-name">
 			<p><sub>Logged in as:</sub><br /><a href="{!! URL::to('user') !!}">{{ Auth::user()->name }}</a></p>
@@ -66,6 +75,8 @@
 
 	</div>
 
+	<script src="//code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="{{ asset('/js/responsive-nav.js') }}"></script>
 	<script src="{{ asset('/js/scrollToTop.js') }}"></script>

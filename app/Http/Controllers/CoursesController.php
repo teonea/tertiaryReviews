@@ -6,7 +6,7 @@ use App\Subject;
 use App\Http\Requests;
 use App\Http\Requests\CourseRequest;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
 class CoursesController extends Controller {
@@ -52,6 +52,8 @@ class CoursesController extends Controller {
 
 
 		Course::create($request->all());
+
+		session()->flash('flash_message', 'Course successfully posted!');
 		
 		return redirect('courses');
 
@@ -60,8 +62,10 @@ class CoursesController extends Controller {
 	public function edit($id) {
 
 		$course = Course::findOrFail($id);
+		$school = School::orderBy('schoolName', 'ASC')->lists('schoolName', 'id');
+		$subject = Subject::orderBy('subjectName', 'ASC')->lists('subjectName', 'id');
 		
-		return view('courses.edit', compact('course'));
+		return view('courses.edit', compact('course', 'school', 'subject'));
 
 	}
 
@@ -71,8 +75,21 @@ class CoursesController extends Controller {
 
 		$course->update($request->all());
 
+		session()->flash('flash_message', 'Course successfully edited!');
 
 		return redirect('courses');
+
+	}
+
+	public function destroy($id)
+	{	
+		$course = Course::findOrFail($id);
+
+		$course->delete();
+
+		session()->flash('flash_message', 'Course successfully deleted!');
+
+        return Redirect::route('courses.index')->with('message', 'Course successfully deleted');
 
 	}
 

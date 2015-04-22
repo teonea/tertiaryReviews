@@ -13,7 +13,19 @@
 
 	@foreach ($reviews as $review)
 
-	<h2><a href="{{ url('/reviews', $review->id) }}">{{ $review->title }}</a></h2>
+	<h2>
+		<a href="{{ url('/reviews', $review->id) }}">{{ $review->title }}</a>
+		@if(Auth::check())
+			<div class="item-delete">
+				<h4 class="delete-list-item">
+					{!! link_to_action('ReviewsController@edit', 'Edit', $review->id) !!} / 
+					{!! Form::open(['method' => 'DELETE', 'route' => ['reviews.destroy', $review->id]]) !!}
+					{!! Form::submit('Delete') !!}
+					{!! Form::close() !!}
+				</h4>
+			</div>
+		@endif
+	</h2>
 	<p>{{ $review->courseType }}</p>
 	<hr />
 

@@ -11,6 +11,20 @@ p {
 	line-height: 1.5em;
 }
 
+p a {
+	font-weight: bold;
+	text-decoration: none;
+	color: #4D4D4D;
+}
+
+p a:hover {
+	color: #F05759;
+}
+
+p a:active {
+	color: #777;
+}
+
 hr {
 	color: #142E42;
 }
@@ -50,7 +64,7 @@ h2, h2 a {
 h3, h3 a {
 	color: #4D4D4D;
 	font-family: 'Ubuntu', Arial, sans-serif;
-	font-weight: normal;
+	font-weight: lighter;
 	font-size: 18px;
 	line-height: 1.5em;
 }
@@ -166,9 +180,41 @@ form {
 	display: inline-block;
 }
 
+.success-msg, .fail-msg {
+	max-width: 800px;
+	margin: 0 auto;
+	font-family: 'Ubuntu', Arial, sans-serif;
+	font-weight: lighter;
+}
+
+.success-msg button, .fail-msg button {
+	border: none;
+	color: #999;
+	font-size: 110%;
+	position: relative;
+	float: right;
+}
+
+.success-msg button {
+	background-color: #DFFFE6;
+}
+
+.success-msg p, .fail-msg p {
+	padding: 12px 15px;
+}
+
+.success-msg {
+	background-color: #DFFFE6;
+}
+
+.success-msg p {
+	color: #057F2D;
+}
+
 .show-delete {
 	float: left !important;
 	margin-bottom: 30px;
+	padding: 30px 0;
 }
 
 .item-delete {

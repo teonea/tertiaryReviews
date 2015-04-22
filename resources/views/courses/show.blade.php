@@ -36,9 +36,20 @@
 @else
     <h4>Sorry, we do not have any reviews listed for this course.</h4>
     <h4>Have you taken this course? We would love for you to take the time to <span class="pink b">{!! link_to('reviews/create', 'Write a Review.') !!}</span></h4>
+
+    <p>View {{ $course->getSchoolName() }} other {!! link_to_action('SchoolsController@showcourses', 'courses', $course->school_id) !!}.</p>
 @endif
 
-
+@if(Auth::check())
+	<div class="show-delete item-delete">
+		<h4 class="delete-list-item">
+			{!! link_to_action('CoursesController@edit', 'Edit', $course->id) !!} / 
+			{!! Form::open(['method' => 'DELETE', 'route' => ['courses.destroy', $course->id]]) !!}
+			{!! Form::submit('Delete') !!}
+			{!! Form::close() !!}
+		</h4>
+	</div>
+@endif
 
 
 @stop

@@ -6,7 +6,7 @@
 
 <hr />
 
-{!! Form::model($course, ['method' => 'PATCH', 'action' => 'CoursesController@update', $course->id]) !!}
+{!! Form::model($course, ['method' => 'PATCH', 'action' => ['CoursesController@update', $course->id]]) !!}
 	
 	@include('courses.form')
 

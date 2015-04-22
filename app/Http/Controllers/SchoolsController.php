@@ -18,10 +18,9 @@ class SchoolsController extends Controller {
 
 	public function index() {
 
-		$icon = '<i class="fa fa-pencil delete-list-item"></i>';
 		$schools = School::orderBy('schoolName', 'ASC')->paginate(15);
 
-		return view('schools.index', compact('schools', 'icon'));
+		return view('schools.index', compact('schools'));
 
 	}
 
@@ -35,11 +34,11 @@ class SchoolsController extends Controller {
 
 	public function showcourses($id) {
 
+		$course = Course::paginate(15);
+
 		$data = School::where('id', $id)->with('courses')->get();
 
 		$school = School::findOrFail($id);
-
-		$course = Course::all();
 
 		return view('schools.showcourses', compact('data', 'school', 'course'));
 
@@ -53,9 +52,10 @@ class SchoolsController extends Controller {
 
 	public function store(SchoolRequest $request) {
 
-
 		School::create($request->all());
 		
+		session()->flash('flash_message', 'School successfully posted!');
+
 		return redirect('schools');
 
 	}
@@ -74,6 +74,8 @@ class SchoolsController extends Controller {
 
 		$school->update($request->all());
 
+		session()->flash('flash_message', 'School successfully edited!');
+
 		return redirect('schools');
 
 	}
@@ -83,6 +85,8 @@ class SchoolsController extends Controller {
 		$school = School::findOrFail($id);
 
 		$school->delete();
+
+		session()->flash('flash_message', 'School successfully deleted!');
 
         return Redirect::route('schools.index')->with('message', 'School successfully deleted');
 

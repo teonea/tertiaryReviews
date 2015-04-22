@@ -24,7 +24,18 @@
 
 	<ul class="item-list">
 		@foreach ($courses as $course)
-		<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a></li>
+		<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a>
+			@if(Auth::check())
+				<div class="item-delete">
+					<h4 class="delete-list-item">
+						{!! link_to_action('CoursesController@edit', 'Edit', $course->id) !!} / 
+						{!! Form::open(['method' => 'DELETE', 'route' => ['courses.destroy', $course->id]]) !!}
+						{!! Form::submit('Delete') !!}
+						{!! Form::close() !!}
+					</h4>
+				</div>
+			@endif
+		</li>
 		<hr />
 		@endforeach
 	</ul>

@@ -4,20 +4,27 @@
 
 <h1>List a School</h1>
 <hr />
-<h2>Insert a school into the database</h2>
 
-{!! Form::open(['action' => 'SchoolsController@store']) !!}
+@if(Auth::check())
 	
-@include('schools.form')
+	<h2>Insert a school into the database</h2>
 
-<div>
-	{!! Form::submit('Post School') !!}
-</div>
+	{!! Form::open(['action' => 'SchoolsController@store', 'class' => 'wr-form']) !!}
+		
+	@include('schools.form')
 
-{!! Form::close() !!}
+	<div>
+		{!! Form::submit('Post School') !!}
+	</div>
 
+	{!! Form::close() !!}
 
-@include('errors.list')
+	@include('errors.list')
 
+@else
+
+	<p>Only admin users are able to list schools. If we are missing a school in our database please let us know {!! link_to('contact', 'here') !!}.</p>	
+
+@endif
 
 @stop

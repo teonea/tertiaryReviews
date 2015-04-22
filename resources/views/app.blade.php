@@ -37,7 +37,7 @@
 
 		@if(Auth::check())
 		<div id="login-name">
-			<p><a href="{!! URL::to('user') !!}">{{ Auth::user()->name }}</a></p>
+			<p><sub>Logged in as:</sub><br /><a href="{!! URL::to('user') !!}">{{ Auth::user()->name }}</a></p>
 		</div>
 		@endif
 		

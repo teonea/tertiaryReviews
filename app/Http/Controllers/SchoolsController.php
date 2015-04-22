@@ -12,15 +12,16 @@ class SchoolsController extends Controller {
 
 	public function __construct() {
 
-		$this->middleware('auth', ['only' => 'create', 'edit', 'destroy']);
+		$this->middleware('auth', ['only' => 'edit', 'destroy']);
 
 	}
 
 	public function index() {
 
+		$icon = '<i class="fa fa-pencil delete-list-item"></i>';
 		$schools = School::orderBy('schoolName', 'ASC')->paginate(15);
 
-		return view('schools.index', compact('schools'));
+		return view('schools.index', compact('schools', 'icon'));
 
 	}
 

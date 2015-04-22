@@ -8,7 +8,7 @@
 
 <p>We want to know your honest opinion of your tertiary study experience. Include anything you wish you could have known before enrolling for your course.</p>
 
-{!! Form::open(['action' => 'ReviewsController@store']) !!}
+{!! Form::open(['action' => 'ReviewsController@store', 'class' => 'wr-form']) !!}
 	
 @include('reviews.form')
 

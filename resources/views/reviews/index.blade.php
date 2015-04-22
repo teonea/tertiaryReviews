@@ -7,15 +7,24 @@
 
 <hr />
 
-@foreach ($reviews as $review)
+@if (count($reviews) >= 1)
 
-<h2><a href="{{ url('/reviews', $review->id) }}">{{ $review->title }}</a></h2>
-<p>{{ $review->courseType }}</p>
+	{!! $reviews->render() !!}
 
-<hr />
+	@foreach ($reviews as $review)
 
-@endforeach
+	<h2><a href="{{ url('/reviews', $review->id) }}">{{ $review->title }}</a></h2>
+	<p>{{ $review->courseType }}</p>
+	<hr />
 
-{!! $reviews->render() !!}
+	@endforeach
+
+	{!! $reviews->render() !!}
+
+@else
+	
+	<p>Sorry, we currently have no reviews listed. You can post a review {!! link_to('reviews/create', 'here') !!}.</p>
+
+@endif
 
 @stop

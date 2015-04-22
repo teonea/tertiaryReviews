@@ -21,5 +21,15 @@
 
 <h4>{!! link_to_action('SchoolsController@showcourses', 'View Courses', $school->id) !!}</h4>
 
+@if(Auth::check())
+	<div class="show-delete item-delete">
+		<h4 class="delete-list-item">
+			{!! link_to_action('SchoolsController@edit', 'Edit', $school->id) !!} / 
+			{!! Form::open(['method' => 'DELETE', 'route' => ['schools.destroy', $school->id]]) !!}
+			{!! Form::submit('Delete') !!}
+			{!! Form::close() !!}
+		</h4>
+	</div>
+@endif
 
 @stop

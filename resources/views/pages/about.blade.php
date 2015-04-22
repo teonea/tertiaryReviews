@@ -4,7 +4,7 @@
 
 <h1>About</h1>
 <hr />
-<h2>The Biggest Collection of Reviews on tertiary study courses around New Zealand.</h2>
+<h2>The biggest collection of reviews on tertiary study courses around New Zealand.</h2>
 <p>Tertiary Reviews is a knowledge sharing community here to help people make important life decisions. We provide real reviews from real people 	and we hope their reliable, first-hand experiences will guide you in the right direction for what may be the biggest decision of your life.
 </p>
 <p>Meet the Creator:

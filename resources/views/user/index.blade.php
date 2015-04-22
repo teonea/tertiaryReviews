@@ -20,6 +20,6 @@
 
 <h4>{!! link_to('auth/register', 'Register another Admin') !!}</h4>
 
-
+<p>{!! link_to('auth/logout', 'Logout') !!}</p>
 
 @endsection

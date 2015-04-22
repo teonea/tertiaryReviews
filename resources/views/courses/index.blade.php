@@ -19,6 +19,8 @@
 
 
 @if (count($courses) >= 1)
+	
+	{!! $courses->render() !!}
 
 	<ul class="item-list">
 		@foreach ($courses as $course)
@@ -29,7 +31,7 @@
 
 @else
 	
-	<p>No Results</p>
+	<p>Sorry, we currently have no course listings. {!! link_to('courses/create', 'here') !!}.</p>
 
 @endif
 

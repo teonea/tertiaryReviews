@@ -29,8 +29,7 @@ Route::resource('courses', 'CoursesController');
 
 Route::resource('schools', 'SchoolsController');
 Route::get('schools/{id}/courses', 'SchoolsController@showcourses');
-Route::get('schools/destroy/{id}', 'SchoolsController@destroy');
-Route::get('schools/edit/{id}', 'SchoolsController@edit');
+
 
 
 

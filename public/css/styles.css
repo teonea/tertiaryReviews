@@ -163,10 +163,49 @@ form input, form textarea {
 
 form {
 	margin: 30px 0 30px 0;
+	display: inline-block;
+}
+
+.show-delete {
+	float: left !important;
+	margin-bottom: 30px;
+}
+
+.item-delete {
+	float: right;
+}
+
+.item-delete form {
+	margin: 0;
+	padding: 0;
+}
+
+.item-delete form input {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	color: #4D4D4D;
+	font-family: 'Libre Baskerville', Arial, sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+	width: 55px;
+}
+
+.item-delete a:hover {
+	color: #F05759;
+}
+
+.show-delete form input {
+	text-decoration: underline;
+}
+
+.item-delete form input:hover {
+	color: #F05759;
+	cursor: pointer;
 }
 
 .delete-list-item {
-	float: right;
 	margin-right: 8px;
 }
 
@@ -217,7 +256,7 @@ form {
 #login-name {
 	right: 0px;
 	position: absolute;
-	padding: 6px 22px 6px 22px;
+	padding: 8px 22px 12px 22px;
 	background-color: #F05759;
 	z-index: 10;
 }
@@ -230,13 +269,17 @@ form {
 	font-size: 17px;
 }
 
+#login-name p {
+	margin: 0;
+}
+
 #login-name a:hover {
 	color: #fff;
 }
 
 .pagination {
 	padding-left: 0;
-	margin-bottom: 60px;
+	margin-bottom: 20px;
 }
 
 .pagination li {

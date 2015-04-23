@@ -1,4 +1,6 @@
 <?php
+use App\Course;
+use App\School;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,7 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'WelcomeController@home');
 
 
+
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 Route::get('privacyPolicy', 'PagesController@privacyPolicy');
@@ -26,9 +29,23 @@ Route::resource('user', 'UserController');
 Route::resource('reviews', 'ReviewsController');
 
 Route::resource('courses', 'CoursesController');
+Route::get('courses', function()
+{
+	$query = Request::get('q');
+
+	if($query) {
+		$courses = Course::where('courseName', 'LIKE', "%$query%")->paginate(15);
+	} else {
+		$courses = Course::all();
+	}
+
+	return View::make('courses.index')->withCourses($courses);
+});
+
 
 Route::resource('schools', 'SchoolsController');
 Route::get('schools/{id}/courses', 'SchoolsController@showcourses');
+Route::get('schools', 'SchoolsController@search');
 
 
 

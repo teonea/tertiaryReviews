@@ -7,11 +7,19 @@
 
 <hr />
 
-<h2>Browse by Course</h2>
+<h2>Search by Course</h2>
 
-@include('search.index')
+
+{!! Form::open(['method' => 'GET']) !!}
+	
+	{!! Form::input('search', 'q', null, $attributes = ['placeholder' => 'Enter Keywords']) !!}
+
+{!! Form::close() !!}
+
 
 @if (count($courses) >= 1)
+	
+	{!! $courses->render() !!}
 
 	<ul class="item-list">
 		@foreach ($courses as $course)
@@ -37,5 +45,9 @@
 
 @endif
 
+
+
+
+{!! $courses->render() !!}
 
 @stop

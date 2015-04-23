@@ -7,6 +7,7 @@ use App\Http\Requests\SchoolRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
+use Input;
 
 class SchoolsController extends Controller {
 
@@ -91,5 +92,18 @@ class SchoolsController extends Controller {
         return Redirect::route('schools.index')->with('message', 'School successfully deleted');
 
 	}
+
+	public function search()
+{
+	$query = Input::get('q');
+
+	if($query) {
+		$schools = School::where('schoolName', 'LIKE', "%$query%")->paginate(15);
+	} else {
+		$schools = School::all();
+	}
+
+	return view('schools.index', compact('query'))->withSchools($schools);
+}
 
 }

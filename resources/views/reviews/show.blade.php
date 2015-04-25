@@ -11,6 +11,7 @@
 	<h3>Tertiary Education Provider:  <span class="b">{{ $review->getSchoolName() }}</span></h3>	
 	<h3>Subject:  <span class="b">{{ $review->getSubjectName() }}</span></h3>
 	<h3>Course:  <span class="b">{{ $review->course->courseName }}</span></h3>
+	<h3>Posted: <span class="b">{{ $review->created_at->format('d/m/Y') }}</span></h3>
 
 	<p>{{ $review->courseType }}</p>
 	<p>{{ $review->favouriteAspects }}</p>

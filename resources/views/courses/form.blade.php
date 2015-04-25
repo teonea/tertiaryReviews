@@ -1,10 +1,10 @@
 <div>
-    {!! Form::label('schoolName', 'Tertiary Education Provider', $attributes = ['class' => 'wr-form']) !!}
+    {!! Form::label('school_id', 'Tertiary Education Provider') !!}
     {!! form::select('school_id', $school, null) !!}
 </div>
 
 <div>
-    {!! Form::label('name', 'Subject') !!}
+    {!! Form::label('subject_id', 'Subject') !!}
     {!! form::select('subject_id', $subject, null) !!}
 </div>
 

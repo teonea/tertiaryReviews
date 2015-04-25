@@ -6,7 +6,7 @@
 <hr />
 <h2>Tell us about your experience</h2>
 
-<p>We want to know your honest opinion of your tertiary study experience. Include anything you wish you could have known before enrolling for your course.</p>
+<p>We want to know your honest opinion of your tertiary study experience. Include anything you wish you could have known before enrolling for your course. All reviews are anonymous.</p>
 
 {!! Form::open(['action' => 'ReviewsController@store', 'class' => 'wr-form']) !!}
 	

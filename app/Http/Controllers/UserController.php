@@ -23,7 +23,11 @@ class UserController extends Controller {
 	public function index()
 	{
 
-		return view('user.index', compact('user'));
+		$page = 'Admin Control';
+		$description = 'Admin Control over Tertiary Reviews NZ website.';
+		$keywords = 'reviews';
+
+		return view('user.index', compact('user', 'page', 'description', 'keywords'));
 
 	}
 
@@ -34,7 +38,12 @@ class UserController extends Controller {
 	 */
 	public function create()
 	{
-		return view('auth/register');
+
+		$page = 'Register';
+		$description = 'Register another admin user.';
+		$keywords = 'register Tertiary reviews';
+
+		return view('auth/register', compact('page', 'description', 'keywords'));
 	}
 
 	/**
@@ -68,9 +77,14 @@ class UserController extends Controller {
 	 */
 	public function edit($id)
 	{
+
+		$page = 'Edit Details';
+		$description = 'Edit admin user details.';
+		$keywords = 'edit user details, tertiary reviews';
+
 		$user = User::findOrFail($id);
 
-		return view('user.edit', compact('user'));
+		return view('user.edit', compact('user', 'page', 'description', 'keywords'));
 	}
 
 	/**

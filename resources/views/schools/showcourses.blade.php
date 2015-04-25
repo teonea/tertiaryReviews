@@ -8,16 +8,15 @@
 	
 <h2>{{ $school->schoolName }} Courses</h2>
 
-<p>Below are the courses listed for <span class="b">{{ $school->schoolName }}</span>.</p>
+<h3>Below are the courses listed for <span class="b">{{ $school->schoolName }}</span>.</h3>
 
-{!! $course->render() !!}
+{!! $data->render() !!}
 
 @if (count($school->courses) >= 1)
 
 	<ul class="item-list">
 		@foreach ($school->courses as $course)
-		<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a></li>
-		<hr />
+		<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a><hr /></li>
 		@endforeach
 	</ul>
 
@@ -28,9 +27,6 @@
 
 @endif
 
-
-
-
-
+{!! $data->render() !!}
 
 @stop

@@ -114,8 +114,9 @@ h4, h4 a {
 	width: 90%;
 	margin: 0 30px 30px 30px;
 	padding-top: 60px;
-	font-size: 50px;
-	line-height: 1em;
+	font-size: 40px;
+	line-height: 1.2em;
+	letter-spacing: 1.1px;
 }
 
 .error {
@@ -147,6 +148,20 @@ h4, h4 a {
 
 .pink a:active {
 	color: #eee;
+}
+
+.search {
+	margin: 5px 0 20px 0;
+}
+
+.search input {
+	font-family: 'Ubuntu', Arial, sans-serif;
+	font-weight: lighter;
+	letter-spacing: 1.3px;
+	padding: 20px;
+	font-size: 16px;
+	margin: 0;
+	width: 400px;
 }
 
 label, #wr-form a {
@@ -238,6 +253,10 @@ form {
 	width: 55px;
 }
 
+.hide {
+    display: none;
+}
+
 .item-delete a:hover {
 	color: #F05759;
 }
@@ -258,6 +277,8 @@ form {
 .item-list {
 	padding-left: 0;
 	list-style: none;
+	font-family: 'Ubuntu', Arial, sans-serif;
+	font-weight: lighter;
 }
 
 .item-list li a {
@@ -280,15 +301,27 @@ form {
 	padding: 15px 40px 15px 40px;
 }
 
-#wr-form div input[type='submit'] {
-	width: 330px;
+form button {
+	border: none;
+	width: 335px;
 	font-family: 'Ubuntu', Arial, sans-serif;
 	font-weight: lighter;
 	font-size: 15px;
 	background-color: #4D4D4D;
 	color: #eee;
 	letter-spacing: 3px;
-	text-transform: uppercase;
+	padding: 15px;
+
+}
+
+#wr-form div input[type='submit'] {
+	width: 335px;
+	font-family: 'Ubuntu', Arial, sans-serif;
+	font-weight: lighter;
+	font-size: 15px;
+	background-color: #4D4D4D;
+	color: #eee;
+	letter-spacing: 3px;
 }
 
 #wr-form div input, #wr-form div textarea, #wr-form div select {

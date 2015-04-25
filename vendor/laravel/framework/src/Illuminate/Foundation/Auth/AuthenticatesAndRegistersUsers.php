@@ -27,7 +27,12 @@ trait AuthenticatesAndRegistersUsers {
 	 */
 	public function getRegister()
 	{
-		return view('auth.register');
+
+		$page = 'Register';
+		$description = 'Register another admin user.';
+		$keywords = 'register Tertiary reviews';
+
+		return view('auth.register', compact('page', 'description', 'keywords'));
 	}
 
 	/**
@@ -59,7 +64,12 @@ trait AuthenticatesAndRegistersUsers {
 	 */
 	public function getLogin()
 	{
-		return view('auth.login');
+
+		$page = 'Log In';
+		$description = 'Log In for admin users only.';
+		$keywords = 'log in Tertiary reviews';
+
+		return view('auth.login', compact('page', 'description', 'keywords'));
 	}
 
 	/**
@@ -105,9 +115,10 @@ trait AuthenticatesAndRegistersUsers {
 	 */
 	public function getLogout()
 	{
-		$this->auth->logout();
 
-		return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/');
+		$this->auth->logout();
+		session()->flash('flash_message', 'Successfully logged out!');
+		return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/home');
 	}
 
 	/**
@@ -116,12 +127,13 @@ trait AuthenticatesAndRegistersUsers {
 	 * @return string
 	 */
 	public function redirectPath()
-	{
+	{	
+
 		if (property_exists($this, 'redirectPath'))
 		{
 			return $this->redirectPath;
 		}
-
+		session()->flash('flash_message', 'Successfully logged in!');
 		return property_exists($this, 'redirectTo') ? $this->redirectTo : '/home';
 	}
 

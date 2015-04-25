@@ -2,13 +2,16 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="description" content="{{ $description }}">
+	<meta name="keywords" content="{{ $keywords }}">
 	<link rel="stylesheet" href="{{ asset('/css/styles.css') }}"/>
 	<link rel="shortcut icon" href="http://www.example.com/myicon.ico"/>
 	<link rel="stylesheet" href="{{ asset('/css/responsive-nav.css') }}"/>
 	<link rel="stylesheet" href="{{ asset('/css/responsive-styles.css') }}"/>
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700|Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<title></title>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' />
+	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+	<title>Tertiary Reviews - {{ $page }}</title>
 </head>
 <body>
 
@@ -32,16 +35,19 @@
 				<li>{!! link_to('reviews', 'Reviews') !!}</li>
 				<li>{!! link_to('reviews/create', 'Write a Review') !!}</li>
 			</ul>
-			<p><a href="{{ url('search') }}"><i class="fa fa-search"></i></a></p>
+			<p><a href="https://twitter.com/TertiaryReviews" target="_blank"><i class="fa fa-twitter"></i></a></p>
 		</nav>
 
 		@if(Session::has('flash_message'))
+		<div class="notification_msg">
 			<div class="success-msg fail-msg">
 				<p>
 					{{ Session::get('flash_message') }}
-					<button type="button" id="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<button type="button" class="close">&times;</button>
 				</p>
 			</div>
+		</div>
+			
 		@endif
 
 		@if(Auth::check())
@@ -75,6 +81,12 @@
 
 	</div>
 
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script>
+		$( "button" ).click(function() {
+	  $( ".notification_msg" ).hide( "slow" );
+	});
+	</script>
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

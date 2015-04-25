@@ -27,20 +27,11 @@ Route::get('termsAndConditions', 'PagesController@termsAndConditions');
 Route::resource('user', 'UserController');
 
 Route::resource('reviews', 'ReviewsController');
+Route::get('reviews', 'ReviewsController@search');
+
 
 Route::resource('courses', 'CoursesController');
-Route::get('courses', function()
-{
-	$query = Request::get('q');
-
-	if($query) {
-		$courses = Course::where('courseName', 'LIKE', "%$query%")->paginate(15);
-	} else {
-		$courses = Course::all();
-	}
-
-	return View::make('courses.index')->withCourses($courses);
-});
+Route::get('courses', 'CoursesController@search');
 
 
 Route::resource('schools', 'SchoolsController');

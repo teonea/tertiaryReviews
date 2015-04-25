@@ -13,6 +13,12 @@
 
 @if (count($courses) >= 1)
 
+	@if($query == true)
+	<h2>Results for <span class="pink">'{{ $query }}'</span></h2>
+	@endif
+
+	{!!  $courses->render()  !!}
+
 	<ul class="item-list">
 		@foreach ($courses as $course)
 		<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a>
@@ -26,16 +32,18 @@
 					</h4>
 				</div>
 			@endif
+			<hr />
 		</li>
-		<hr />
 		@endforeach
 	</ul>
 
 @else
 	
-	<p>Sorry, we currently have no course listings. {!! link_to('courses/create', 'here') !!}.</p>
+	<p>No results for <span class="b">'{{ $query }}'</span>. Try to search specifically.</p>
+	<p>You can list your course {!! link_to('courses/create', 'here') !!} if it is missing.</p>
 
 @endif
 
+{!!  $courses->render()  !!}
 
 @stop

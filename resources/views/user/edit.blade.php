@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Edit User Details / {{ Auth::user()->name }} </h1>
+<h1>{!! link_to('user', 'Admin') !!} / Edit User Details / {{ Auth::user()->name }} </h1>
 
 <hr />
 

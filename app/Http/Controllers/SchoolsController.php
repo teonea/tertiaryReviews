@@ -19,35 +19,51 @@ class SchoolsController extends Controller {
 
 	public function index() {
 
+		$page = 'Schools';
+		$description = 'Tertiary Education Institutions provided in New Zealan where you can list courses or write reviews.';
+		$keywords = 'tertiary education providers, Institutions, schools, university, polytech, higher education, tertiary, NMIT, SIT, CPIT, Yoobee, AUT, VIC, Otago, Canterbury';
+
 		$schools = School::orderBy('schoolName', 'ASC')->paginate(15);
 
-		return view('schools.index', compact('schools'));
+		return view('schools.index', compact('schools', 'page', 'description', 'keywords'));
 
 	}
 
 	public function show($id) {
 
+		$page = 'Schools';
+		$description = 'Tertiary Education Institutions provided in New Zealan where you can list courses or write reviews.';
+		$keywords = 'tertiary education providers, Institutions, schools, university, polytech, higher education, tertiary';
+
 		$school = School::findOrFail($id);
 
-		return view('schools.show', compact('school'));
+		return view('schools.show', compact('school', 'page', 'description', 'keywords'));
 
 	}
 
 	public function showcourses($id) {
 
+		$page = 'Schools Courses';
+		$description = 'Tertiary Education Institutions courses in which they provide. You may add courses to our database and write reviews.';
+		$keywords = 'schools courses nz, new zealand courses, tertiary education courses';
+
 		$course = Course::paginate(15);
 
-		$data = School::where('id', $id)->with('courses')->get();
+		$data = School::where('id', $id)->with('courses')->paginate(15);
 
 		$school = School::findOrFail($id);
 
-		return view('schools.showcourses', compact('data', 'school', 'course'));
+		return view('schools.showcourses', compact('data', 'school', 'course', 'page', 'description', 'keywords'));
 
 	}
 
 	public function create() {
 
-		return view('schools.create');
+		$page = 'List a School';
+		$description = 'List a Tertiary Education Provider, only admin may do this.';
+		$keywords = 'list school';
+
+		return view('schools.create', compact('page', 'description', 'keywords'));
 
 	}
 
@@ -63,9 +79,13 @@ class SchoolsController extends Controller {
 
 	public function edit($id) {
 
+		$page = 'Edit School';
+		$description = 'Edit Tertiary Education Institution details.';
+		$keywords = 'edit school, edit details, tertiary education provider';
+
 		$school = School::findOrFail($id);
 		
-		return view('schools.edit', compact('school'));
+		return view('schools.edit', compact('school', 'page', 'description', 'keywords'));
 
 	}
 
@@ -94,16 +114,21 @@ class SchoolsController extends Controller {
 	}
 
 	public function search()
-{
-	$query = Input::get('q');
+	{
 
-	if($query) {
-		$schools = School::where('schoolName', 'LIKE', "%$query%")->paginate(15);
-	} else {
-		$schools = School::all();
+		$page = 'Schools';
+		$description = 'Search tertiary Education Institutions provided in New Zealan where you can list courses or write reviews.';
+		$keywords = 'search tertiary education providers, Institutions, schools, university';
+
+		$query = Input::get('q');
+
+		if($query) {
+			$schools = School::where('schoolName', 'LIKE', "%$query%")->orderBy('schoolName', 'ASC')->paginate(15);
+		} else {
+			$schools = School::orderBy('schoolName', 'ASC')->paginate(15);
+		}
+
+		return view('schools.index', compact('query', 'schools', 'page', 'description', 'keywords'));
 	}
-
-	return view('schools.index', compact('query'))->withSchools($schools);
-}
 
 }

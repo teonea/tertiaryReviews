@@ -14,7 +14,11 @@
 
 @if ($schools->count())
 	
+	@if($query == true)
 	<h2>Results for <span class="pink">'{{ $query }}'</span></h2>
+	@endif
+
+	{!!  $schools->render()  !!}
 
 	<ul class="item-list">
 
@@ -31,9 +35,9 @@
 				</h4>
 			</div>
 		@endif
-
-		</li>
 		<hr />
+		</li>
+		
 		@endforeach
 
 	</ul>
@@ -43,6 +47,6 @@
 	<p>If your school is missing please contact us {!! link_to('contact', 'here') !!}.</p>
 @endif
 
-{!! $schools->render() !!}
+{!!  $schools->render()  !!}
 
 @stop

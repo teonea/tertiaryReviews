@@ -35,7 +35,12 @@ class WelcomeController extends Controller {
 
 	public function home()
 	{
-		return view('home');
+
+		$page = 'Home';
+		$description = 'Welcome to Tertiary Reviews. New Zealand\'s biggest collection of reviews on tertiary education courses.';
+		$keywords = 'home, welcome, Tertiary reviews';
+
+		return view('home', compact('page', 'description' ,'keywords'));
 	}
 
 }

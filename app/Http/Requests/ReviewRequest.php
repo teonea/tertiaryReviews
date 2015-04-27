@@ -21,6 +21,7 @@ class ReviewRequest extends Request {
 	 */
 	public function rules()
 	{
+
 		return [
 			'school_id' => 'required',
 			'course_id' => 'required',
@@ -34,7 +35,8 @@ class ReviewRequest extends Request {
 			'clarityRating' => 'integer|required|min:1|max:5',
 			'helpfulnessRating' => 'integer|required|min:1|max:5',
 			'jobProspectsRating' => 'integer|required|min:1|max:5',
-			'overallRating' => 'integer|required|min:1|max:5'
+			'overallRating' => 'integer|required|min:1|max:5',
+			'agree' => 'required'
 		];
 	}
 

@@ -88,31 +88,17 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="{{ asset('/js/responsive-nav.js') }}"></script>
 	<script src="{{ asset('/js/scrollToTop.js') }}"></script>
-<script>
-		$( "button" ).click(function() {
-	  $( ".notification_msg" ).hide( "slow" );
-	});
-	</script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
-  <script src="{{ asset('/js/starrr.min.js') }}"></script>
-  <script>
-    $('.starrr:eq(0)').on('starrr:change', function(e, value){
-      if (value) {
-        $('.your-choice-was').show();
-        $('.choice').text(value);
-      } else {
-        $('.your-choice-was').hide();
-      }
-    });
-  </script>
-  <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  	<script src="{{ asset('/js/starrr.min.js') }}"></script>
+  	<script src="{{ asset('/js/scripts.js') }}"></script>
+  	<script type="text/javascript">
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-39205841-5', 'dobtco.github.io');
-    ga('send', 'pageview');
-  </script>
+	    ga('create', 'UA-39205841-5', 'dobtco.github.io');
+	    ga('send', 'pageview');
+	</script>
 </body>
 </html>

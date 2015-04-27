@@ -27,7 +27,7 @@ class ReviewsController extends Controller {
 		$keywords = 'university reviews, tertiary education reviews, polytech reviews, course reviews, courses new zealand, education new zealand';
 
 
-		$reviews = Review::latest('created_at')->paginate(15);
+		$reviews = Review::latest('created_at')->paginate(10);
 
 		return view('reviews.index', compact('reviews', 'page', 'description', 'keywords'));
 
@@ -109,7 +109,7 @@ class ReviewsController extends Controller {
 		if($query) {
 			$reviews = Review::where('title', 'LIKE', "%$query%")->orWhere('courseType', 'LIKE', "%$query%")->orWhere('favouriteAspects', 'LIKE', "%$query%")->orWhere('leastFavouriteAspects', 'LIKE', "%$query%")->orWhere('courseReview', 'LIKE', "%$query%")->latest('created_at')->paginate(15);
 		} else {
-			$reviews = Review::latest('created_at')->paginate(15);
+			$reviews = Review::latest('created_at')->paginate(10);
 		}
 
 		return view('reviews.index', compact('query', 'reviews', 'page', 'description', 'keywords'));

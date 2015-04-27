@@ -67,3 +67,8 @@
 	<div class='starrr' data-numstars='5' data-connected-input='overallRating'></div>
 	{!! Form::input('hidden', 'overallRating', null) !!}
 </div>
+
+<div>
+	{!! Form::checkbox('terms', 1, null) !!}
+	<label for="terms">I agree to the {!! link_to('termsAndConditions', 'Terms') !!}</label>
+</div>

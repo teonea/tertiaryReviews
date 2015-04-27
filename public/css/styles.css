@@ -111,10 +111,10 @@ h4, h4 a {
 #welcome-msg {
 	font-family: 'Libre Baskerville', serif;
 	font-weight: bold;
-	width: 90%;
+	width: 86%;
 	margin: 0 30px 30px 30px;
-	padding-top: 60px;
-	font-size: 40px;
+	padding-top: 28px;
+	font-size: 30px;
 	line-height: 1.2em;
 	letter-spacing: 1.1px;
 }
@@ -162,6 +162,18 @@ h4, h4 a {
 	font-size: 16px;
 	margin: 0;
 	width: 400px;
+}
+
+.twitter-feed {
+	width: 90%;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+
+.twitter-connect {
+	padding: 20px;
+	background-color: #DAF2FF;
+
 }
 
 label, #wr-form a {
@@ -469,6 +481,18 @@ footer a:active {
 
 @media all and (min-width: 880px) {
 
+	.twitter-feed {
+		margin: 40px 0;
+		width: 46%;
+		position: absolute;
+		right: 0px;
+	}
+
+	#welcome-msg {
+		width: 360px;
+		font-size: 40px;
+	}
+
 	#wr-form div label {
 		float: left;
 		text-align: right; 
@@ -491,11 +515,7 @@ footer a:active {
 
 	.content {
 		padding: 0;
-	}
-
-	#welcome-msg {
-		width: 400px;
-	}
+	}	
 
 	.half {
 		width: 46%;

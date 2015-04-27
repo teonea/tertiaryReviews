@@ -28,7 +28,12 @@ trait ResetsPasswords {
 	 */
 	public function getEmail()
 	{
-		return view('auth.password');
+
+		$page = 'Reset Password';
+		$description = 'Reset Password for admin user.';
+		$keywords = 'reset, Password';
+
+		return view('auth.password', compact('page', 'description', 'keywords'));
 	}
 
 	/**
@@ -74,12 +79,17 @@ trait ResetsPasswords {
 	 */
 	public function getReset($token = null)
 	{
+
+		$page = 'Reset Password';
+		$description = 'Reset Password another admin user.';
+		$keywords = 'reset, password';
+
 		if (is_null($token))
 		{
 			throw new NotFoundHttpException;
 		}
 
-		return view('auth.reset')->with('token', $token);
+		return view('auth.reset', compact('page', 'description', 'keywords'))->with('token', $token);
 	}
 
 	/**

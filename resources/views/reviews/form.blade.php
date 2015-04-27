@@ -40,21 +40,30 @@
 
 <div>
 	{!! Form::label('facilitiesRating', 'Facilities Rating') !!}
-	{!! Form::input('number', 'facilitiesRating', null) !!}
+	<div class='starrr' data-numstars='5' data-connected-input='facilitiesRating'></div>
+    {!! Form::input('hidden', 'facilitiesRating', 'null') !!}</p>
 </div>
+
 <div>
 	{!! Form::label('clarityRating', 'Clarity Rating') !!}
-	{!! Form::input('number', 'clarityRating', null) !!}
+	<div class='starrr' data-numstars='5' data-connected-input='clarityRating'></div>
+	{!! Form::input('hidden', 'clarityRating', null) !!}
 </div>
+
 <div>
 	{!! Form::label('helpfulnessRating', 'Helpfulness Rating') !!}
-	{!! Form::input('number', 'helpfulnessRating', null) !!}
+	<div class='starrr' data-numstars='5' data-connected-input='helpfulnessRating'></div>
+	{!! Form::input('hidden', 'helpfulnessRating', null) !!}
 </div>
+
 <div>
 	{!! Form::label('jobProspectsRating', 'Job Prospects Rating') !!}
-	{!! Form::input('number', 'jobProspectsRating', null) !!}
+	<div class='starrr' data-numstars='5' data-connected-input='jobProspectsRating'></div>
+	{!! Form::input('hidden', 'jobProspectsRating', null) !!}
 </div>
+
 <div>
 	{!! Form::label('overallRating', 'Overall Rating') !!}
-	{!! Form::input('number', 'overallRating', null) !!}
+	<div class='starrr' data-numstars='5' data-connected-input='overallRating'></div>
+	{!! Form::input('hidden', 'overallRating', null) !!}
 </div>

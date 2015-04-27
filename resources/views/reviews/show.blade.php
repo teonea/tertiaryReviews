@@ -11,6 +11,7 @@
 	<h3>Tertiary Education Provider:  <span class="b">{{ $review->getSchoolName() }}</span></h3>	
 	<h3>Subject:  <span class="b">{{ $review->getSubjectName() }}</span></h3>
 	<h3>Course:  <span class="b">{{ $review->course->courseName }}</span></h3>
+	<h3>Region:  <span class="b">{{ $review->school->regionName }}</span></h3>
 	<h3>Posted: <span class="b">{{ $review->created_at->format('d/m/Y') }}</span></h3>
 
 	<p>{{ $review->courseType }}</p>
@@ -18,12 +19,12 @@
 	<p>{{ $review->leastFavouriteAspects }}</p>
 	<p>{{ $review->courseReview }}</p>
 
-	<ul>
-		<li>{{ $review->facilitiesRating }}</li>
-		<li>{{ $review->clarityRating }}</li>
-		<li>{{ $review->helpfulnessRating }}</li>
-		<li>{{ $review->jobProspectsRating }}</li>
-		<li>{{ $review->overallRating }}</li>
+	<ul class="rating-ul">
+		<li>Facilities Rating: <div class='starrr no-touch' data-rating='{{ $review->facilitiesRating }}'></div></li>
+		<li>Clarity Rating: <div class='starrr no-touch' data-rating='{{ $review->clarityRating }}'></div></li>
+		<li>Helpfulness Rating: <div class='starrr no-touch' data-rating='{{ $review->helpfulnessRating }}'></div></li>
+		<li>Job Prospects Rating: <div class='starrr no-touch' data-rating='{{ $review->jobProspectsRating }}'</li>
+		<li>Overall Rating: <div class='starrr no-touch' data-rating='{{ $review->overallRating }}'</li>
 	</ul>
 	
 

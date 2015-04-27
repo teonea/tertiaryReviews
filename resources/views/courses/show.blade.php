@@ -2,13 +2,23 @@
 
 @section('content')
 
-<h1>{!! link_to('courses', 'Courses') !!} / {{ $course->getSchoolName() }} / {{ $course->courseName }}</h1>
+<h1>{!! link_to('courses', 'Courses') !!} / <a href="{{ url('/schools', $course->school_id) }}">{{ $course->getSchoolName() }}</a> / {{ $course->courseName }}</h1>
 
 <hr />
 
 <h2>{{ $course->courseName }}</h2>
 
 @if (count($course->review) >= 1)
+
+	<h3>Course Rating Totals</h3>
+	<ul class="rating-ul">
+		<li>Facilities Rating: {{ $course->facilitiesRatingAverage() }}%</li>
+		<li>Clarity Rating: {{ $course->clarityRatingAverage() }}%</li>
+		<li>Helpfulness Rating: {{ $course->helpfulnessRatingAverage() }}%</li>
+		<li>Job Prospects Rating: {{ $course->jobProspectsRatingAverage() }}%</li>
+		<li>Overall Rating: {{ $course->overallRatingAverage() }}%</li>
+	</ul>
+
     <p>Below are the unbiased, honest reviews listed for <span class="b">{{ $course->courseName }}</span> which is offered at <span class="b">{{ $course->getSchoolName() }}</span>.</p>
 
 	@foreach ($course->review as $review)
@@ -17,17 +27,19 @@
 		<h3>Tertiary Education Provider:  <span class="b">{{ $review->getSchoolName() }}</span></h3>	
 		<h3>Subject:  <span class="b">{{ $review->getSubjectName() }}</span></h3>
 		<h3>Course:  <span class="b">{{ $review->course->courseName }}</span></h3>
+		<h3>Region:  <span class="b">{{ $review->school->regionName }}</span></h3>
+		<h3>Posted: <span class="b">{{ $review->created_at->format('d/m/Y') }}</span></h3>
 		<p>{{ $review->courseType }}</p>
 		<p>{{ $review->favouriteAspects }}</p>
 		<p>{{ $review->leastFavouriteAspects }}</p>
 		<p>{{ $review->courseReview }}</p>
 
-		<ul>
-			<li>{{ $review->facilitiesRating }}</li>
-			<li>{{ $review->clarityRating }}</li>
-			<li>{{ $review->helpfulnessRating }}</li>
-			<li>{{ $review->jobProspectsRating }}</li>
-			<li>{{ $review->overallRating }}</li>
+		<ul class="rating-ul">
+			<li>Facilities Rating: <div class='starrr no-touch' data-rating='{{ $review->facilitiesRating }}'></div></li>
+			<li>Clarity Rating: <div class='starrr no-touch' data-rating='{{ $review->clarityRating }}'></div></li>
+			<li>Helpfulness Rating: <div class='starrr no-touch' data-rating='{{ $review->helpfulnessRating }}'></div></li>
+			<li>Job Prospects Rating: <div class='starrr no-touch' data-rating='{{ $review->jobProspectsRating }}'</li>
+			<li>Overall Rating: <div class='starrr no-touch' data-rating='{{ $review->overallRating }}'</li>
 		</ul>
 	</div>
 

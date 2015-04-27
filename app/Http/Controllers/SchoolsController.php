@@ -47,13 +47,16 @@ class SchoolsController extends Controller {
 		$description = 'Tertiary Education Institutions courses in which they provide. You may add courses to our database and write reviews.';
 		$keywords = 'schools courses nz, new zealand courses, tertiary education courses';
 
-		$course = Course::paginate(15);
+			$query = Input::get('q');
 
-		$data = School::where('id', $id)->with('courses')->paginate(15);
+			$course = Course::paginate(15);
 
-		$school = School::findOrFail($id);
+			$data = School::where('id', $id)->with('courses')->paginate(15);
 
-		return view('schools.showcourses', compact('data', 'school', 'course', 'page', 'description', 'keywords'));
+			$school = School::findOrFail($id);
+	
+
+		return view('schools.showcourses', compact('query', 'data', 'school', 'course', 'page', 'description', 'keywords'));
 
 	}
 
@@ -123,7 +126,7 @@ class SchoolsController extends Controller {
 		$query = Input::get('q');
 
 		if($query) {
-			$schools = School::where('schoolName', 'LIKE', "%$query%")->orderBy('schoolName', 'ASC')->paginate(15);
+			$schools = School::where('schoolName', 'LIKE', "%$query%")->orWhere('regionName', 'LIKE', "%$query%")->orWhere('schoolCity', 'LIKE', "%$query%")->orWhere('schoolType', 'LIKE', "%$query%")->orWhere('schoolAuthority', 'LIKE', "%$query%")->orWhere('schoolWebsite', 'LIKE', "%$query%")->orderBy('schoolName', 'ASC')->paginate(15);
 		} else {
 			$schools = School::orderBy('schoolName', 'ASC')->paginate(15);
 		}

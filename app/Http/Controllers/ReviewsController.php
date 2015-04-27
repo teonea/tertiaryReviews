@@ -107,7 +107,7 @@ class ReviewsController extends Controller {
 		$query = Input::get('q');
 
 		if($query) {
-			$reviews = Review::where('title', 'LIKE', "%$query%")->latest('created_at')->paginate(15);
+			$reviews = Review::where('title', 'LIKE', "%$query%")->orWhere('courseType', 'LIKE', "%$query%")->orWhere('favouriteAspects', 'LIKE', "%$query%")->orWhere('leastFavouriteAspects', 'LIKE', "%$query%")->orWhere('courseReview', 'LIKE', "%$query%")->latest('created_at')->paginate(15);
 		} else {
 			$reviews = Review::latest('created_at')->paginate(15);
 		}

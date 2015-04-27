@@ -265,6 +265,11 @@ form {
 	text-decoration: underline;
 }
 
+input[type='number'] {
+	background-color: #fff;
+	width: 20px;
+}
+
 .item-delete form input:hover {
 	color: #F05759;
 	cursor: pointer;
@@ -301,6 +306,10 @@ form {
 	padding: 15px 40px 15px 40px;
 }
 
+form div {
+	margin-bottom: 10px;
+}
+
 form button {
 	border: none;
 	width: 335px;
@@ -330,6 +339,12 @@ form button {
 
 #wr-form div input[type='checkbox'] {
 	color: #4D4D4D;
+}
+
+.rating-ul {
+	list-style-type: none;
+	padding-left: 0;
+	font-family: 'Ubuntu', Arial, sans-serif;
 }
 
 #login-name {
@@ -452,7 +467,7 @@ footer a:active {
 }
 
 
-@media all and (min-width: 720px) {
+@media all and (min-width: 880px) {
 
 	#wr-form div label {
 		float: left;

@@ -42,8 +42,40 @@ class Course extends Model {
 
 	}
 
-	
+	public function facilitiesRatingAverage() {
 
+		$result = Review::avg('facilitiesRating');
+		return round( $result * 100 ) / 5;
 	
+	}
+
+	public function clarityRatingAverage() {
+
+		$result = Review::avg('clarityRating');
+		return round( $result * 100 ) / 5;
+	
+	}
+
+	public function helpfulnessRatingAverage() {
+
+		$result = Review::avg('helpfulnessRating');
+		return round( $result * 100 ) / 5;
+	
+	}
+
+	public function jobProspectsRatingAverage() {
+
+		$result = Review::avg('jobProspectsRating');
+		return round( $result * 100 ) / 5;
+	
+	}
+
+	public function overallRatingAverage() {
+
+		$result = Review::avg('overallRating');
+		return round( $result * 100 ) / 5;
+		
+	
+	}	
 
 }

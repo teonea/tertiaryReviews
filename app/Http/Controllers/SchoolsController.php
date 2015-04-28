@@ -106,19 +106,25 @@ class SchoolsController extends Controller {
 	
 	public function destroy($id)
 	{	
-		$school = School::findOrFail($id);
+		try {
+		  	$school = School::findOrFail($id);
 
-		$school->delete();
+			$school->delete();
 
-		session()->flash('flash_message', 'School successfully deleted!');
+			session()->flash('flash_message', 'School successfully deleted!');
 
-        return Redirect::route('schools.index')->with('message', 'School successfully deleted');
+	        return Redirect::route('schools.index')->with('message', 'School successfully deleted');
 
+		} catch ( \Exception $e) {
+
+		   	session()->flash('flash_message', 'This school can not be deleted as it has course listings. You have to delete the courses first.');
+
+	        return Redirect::route('schools.index', compact('query', 'schools', 'page', 'description', 'keywords'))->with('message', 'School unsuccessfully deleted');
+		}
 	}
 
 	public function search()
 	{
-
 		$page = 'Schools';
 		$description = 'Search tertiary Education Institutions provided in New Zealan where you can list courses or write reviews.';
 		$keywords = 'search tertiary education providers, Institutions, schools, university';

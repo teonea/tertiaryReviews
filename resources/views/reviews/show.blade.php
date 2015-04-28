@@ -20,11 +20,31 @@
 	<p>{{ $review->courseReview }}</p>
 
 	<ul class="rating-ul">
-		<li>Facilities Rating: <div class='starrr no-touch' data-rating='{{ $review->facilitiesRating }}'></div></li>
-		<li>Clarity Rating: <div class='starrr no-touch' data-rating='{{ $review->clarityRating }}'></div></li>
-		<li>Helpfulness Rating: <div class='starrr no-touch' data-rating='{{ $review->helpfulnessRating }}'></div></li>
-		<li>Job Prospects Rating: <div class='starrr no-touch' data-rating='{{ $review->jobProspectsRating }}'</li>
-		<li>Overall Rating: <div class='starrr no-touch' data-rating='{{ $review->overallRating }}'</li>
+		<li>Facilities Rating:
+			<?php  for($i=0; $i<$review->facilitiesRating; $i++)
+				{ echo '<i class="fa-star fa" style="color: #ffd119"></i>'; 
+			}  ?>
+		</li>
+		<li>Clarity Rating:
+			<?php  for($i=0; $i<$review->clarityRating; $i++)
+				{ echo '<i class="fa-star fa" style="color: #ffd119"></i>'; 
+			}  ?>
+		</li>
+		<li>Helpfulness Rating:
+			<?php  for($i=0; $i<$review->helpfulnessRating; $i++)
+				{ echo '<i class="fa-star fa" style="color: #ffd119"></i>'; 
+			}  ?>
+		</li>
+		<li>Job Prospects Rating:
+			<?php  for($i=0; $i<$review->jobProspectsRating; $i++)
+				{ echo '<i class="fa-star fa" style="color: #ffd119"></i>'; 
+			}  ?>
+		</li>
+		<li>Overall Rating:
+			<?php  for($i=0; $i<$review->overallRating; $i++)
+				{ echo '<i class="fa-star fa" style="color: #ffd119"></i>'; 
+			}  ?>
+		</li>
 	</ul>
 	
 

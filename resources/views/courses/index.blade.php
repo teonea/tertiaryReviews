@@ -11,7 +11,7 @@
 
 @include('search.index')
 
-@if (count($courses) >= 1)
+@if ($courses->count())
 
 	@if($query == true)
 	<h2>Results for <span class="pink">'{{ $query }}'</span></h2>

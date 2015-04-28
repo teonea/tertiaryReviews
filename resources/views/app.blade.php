@@ -84,6 +84,7 @@
 
 	
 	<script src="//code.jquery.com/jquery.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="{{ asset('/js/responsive-nav.js') }}"></script>
@@ -100,5 +101,6 @@
 	    ga('create', 'UA-39205841-5', 'dobtco.github.io');
 	    ga('send', 'pageview');
 	</script>
+</script>
 </body>
 </html>

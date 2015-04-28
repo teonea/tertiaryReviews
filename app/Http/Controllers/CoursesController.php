@@ -111,14 +111,21 @@ class CoursesController extends Controller {
 
 	public function destroy($id)
 	{	
-		$course = Course::findOrFail($id);
+		try {
+		  	$course = Course::findOrFail($id);
 
-		$course->delete();
+			$course->delete();
 
-		session()->flash('flash_message', 'Course successfully deleted!');
+			session()->flash('flash_message', 'Course successfully deleted!');
 
-        return Redirect::route('courses.index')->with('message', 'Course successfully deleted');
+	        return Redirect::route('courses.index')->with('message', 'Course successfully deleted');
 
+		} catch ( \Exception $e) {
+
+		   	session()->flash('flash_message', 'This course can not be deleted as it has been reviewed. You have to delete the reviews first.');
+
+	        return Redirect::route('courses.index')->with('message', 'Course unsuccessfully deleted');
+		}
 	}
 
 

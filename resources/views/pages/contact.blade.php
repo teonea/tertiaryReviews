@@ -8,41 +8,16 @@
 
 <div class="half">
 
-	<p>Want to collaborate? Found an issue with the website? Just want to say hello? Let us know...</p>
-
-	{!! Form::open(['url' => 'contact']) !!}
-
-		<div>
-			{!! Form::text('firstName', null, $attributes = ['placeholder' => 'First Name']) !!}
-		</div>
-
-		<div>
-			{!! Form::text('lastName', null, $attributes = ['placeholder' => 'Last Name']) !!}
-		</div>
-
-		<div>
-			{!! Form::email('email', null, $attributes = ['placeholder' => 'Email']) !!}
-		</div>
-
-		<div>
-			{!! Form::textarea('enquiry', null, $attributes = ['placeholder' => 'How can we help?', 'rows' => '10']) !!}
-		</div>
-
-		<div>
-			{!! Form::submit('Send Enquiry') !!}
-		</div>
-
-	{!! Form::close() !!}
+	<p>Want to collaborate? Found an issue with the website? Just want to say hello? Get in touch...</p>
+	<h4 class="pink b">tertiaryreviews@gmail.com</h4>
+	<p>You can also follow us on Twitter to get the latest updates and to be in the loop with Tertiary Reviews.</p>
 
 </div>
 
 <div class="half">
-	<p>Is it super duper important? Get in touch directly...</p>
-	<ul>
-		<li><i class="fa fa-envelope-o"></i>hannahteonea@gmail.com</li>
-		<li><i class="fa fa-mobile"></i>0224156049</li>
-		<li><i class="fa fa-facebook"></i><i class="fa fa-twitter"></i></li>
-	</ul>
+	<div class="contact-twitter-feed">
+		<a class="twitter-timeline" href="https://twitter.com/TertiaryReviews" width="400" data-widget-id="592796352339386368">Tweets by @TertiaryReviews</a>
+	</div>
 </div>
 
 @stop

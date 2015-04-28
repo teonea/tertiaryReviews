@@ -68,7 +68,9 @@
 	{!! Form::input('hidden', 'overallRating', null) !!}
 </div>
 
-<div>
-	{!! Form::checkbox('terms', 1, null) !!}
-	<label for="terms">I agree to the {!! link_to('termsAndConditions', 'Terms') !!}</label>
+<div class="checbox-div">
+	{!! Form::checkbox('terms', 1, null, $attributes = ['class' => 'checkbox']) !!}
+	<label for="terms" class="checkbox-label">I agree to the {!! link_to('termsAndConditions', 'Terms and Conditions') !!}</label>
 </div>
+
+<div class="g-recaptcha" data-sitekey="6LcKBgYTAAAAAHiw6_rJLIktwGMq7wYTnYKhG9Ba"></div>

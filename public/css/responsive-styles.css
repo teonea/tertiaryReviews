@@ -131,6 +131,12 @@ section {
   color: #F05759;
 }
 
+.dropdown ul li {
+  position: relative;
+  top: -5px;
+  left: -20px;
+}
+
 .nav-collapse a:active {
   color: #eee;
 }

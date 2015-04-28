@@ -104,6 +104,36 @@ h4, h4 a {
 	margin: 0 auto;
 }
 
+.contact-ul li {
+	color: #4D4D4D;
+	font-weight: lighter;
+}
+
+.sitemap-ul li, .sitemap-ul ul li {
+	padding-bottom: 8px;
+}
+
+.sitemap-ul li a, .sitemap-ul ul li a {
+	color: #4D4D4D;
+	text-decoration: none;
+}
+
+.sitemap-ul li a:hover, .sitemap-ul ul li a:hover {
+	color: #F05759;
+}
+
+.sitemap-ul li a:active, .sitemap-ul ul li a:active {
+	color: #142E42;
+}
+
+.sitemap-ul ul li {
+	list-style-type: none;
+}
+
+.bottom-space {
+	margin-bottom: 40px;
+}
+
 .pagination .active {
 	color: #F05759;
 }
@@ -133,11 +163,16 @@ h4, h4 a {
 	margin-bottom: 40px;
 }
 
+.about-img {
+	float: left;
+	margin: 20px 30px 30px 0;
+}
+
 .b {
 	font-weight: bold;
 }
 
-.pink a {
+.pink a, .pink {
 	color: #F05759;
 	text-decoration: none;
 }
@@ -173,7 +208,47 @@ h4, h4 a {
 .twitter-connect {
 	padding: 20px;
 	background-color: #DAF2FF;
+}
 
+.contact-twitter-feed {
+	margin: 15px 0 80px 0;
+}
+
+.checkbox-label {
+    display: block;
+    position: relative;
+    top: -20px;
+    left: 20px;
+}
+
+.checkbox {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+    border: none;
+}
+
+.checkbox-div {
+	margin-bottom: 0px;
+}
+
+label a {
+	color: #4D4D4D;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+label a:hover {
+	color: #F05759;
+}
+
+label a:active {
+	color: #142E42;
 }
 
 label, #wr-form a {

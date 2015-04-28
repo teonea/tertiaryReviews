@@ -25,7 +25,7 @@ class CourseRequest extends Request {
 			'school_id' => 'required',
 			'subject_id' => 'required',
 			'courseName' => 'required|min:3|max:300',
-			'agree' => 'required'
+			'terms' => 'required'
 		];
 	}
 

@@ -30,6 +30,7 @@ Route::resource('reviews', 'ReviewsController');
 Route::get('reviews', 'ReviewsController@search');
 
 
+
 Route::resource('courses', 'CoursesController');
 Route::get('courses', 'CoursesController@search');
 

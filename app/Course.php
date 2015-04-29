@@ -76,6 +76,8 @@ class Course extends Model {
 		return round( $result * 100 ) / 5;
 		
 	
-	}	
+	}
+
+
 
 }

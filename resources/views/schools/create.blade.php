@@ -9,6 +9,11 @@
 	
 	<h2>Insert a school into the database</h2>
 
+	@if (count($errors) > 0)
+		<p class="error b">Whoops! The form was not validated, please check your errors.</p>
+		@include('errors.list')
+	@endif
+
 	{!! Form::open(['action' => 'SchoolsController@store', 'class' => 'wr-form']) !!}
 		
 	@include('schools.form')
@@ -18,8 +23,6 @@
 	</div>
 
 	{!! Form::close() !!}
-
-	@include('errors.list')
 
 @else
 

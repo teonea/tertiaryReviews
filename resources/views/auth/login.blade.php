@@ -24,16 +24,16 @@
 		<input type="password" name="password" id="password">
 	</div>
 
-	<div>
-		<label for="remember">
-			<input type="checkbox" name="remember" id="remember"> Remember Me
-		</label>
+	<div class="checkbox-div">
+		
+			<input type="checkbox" class="checkbox" name="remember" id="remember">
+		<label for="remember"  class="checkbox-label">Remember Me</label>
 	</div>
 
 
 	<div>
 		<button type="submit">Login</button>
-		<p><a href="{{ url('/password/email') }}">Forgot Your Password?</a></p>
+		<p class="pink"><a class="light" href="{{ url('/password/email') }}">Forgot Your Password?</a></p>
 	</div>
 
 </form>

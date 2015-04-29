@@ -10,7 +10,7 @@
 
 	<p>Want to collaborate? Found an issue with the website? Just want to say hello? Get in touch...</p>
 	<h4 class="pink b">tertiaryreviews@gmail.com</h4>
-	<p>You can also follow us on Twitter to get the latest updates and to be in the loop with Tertiary Reviews.</p>
+	<p>You can also follow us on Twitter to get the latest updates!</p>
 
 </div>
 

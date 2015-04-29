@@ -38,32 +38,32 @@
 	{!! Form::textarea('courseReview', null, $attributes = ['placeholder' => 'Is it what you expected? What would you have wanted to know before enrolling for your course? Did classes run on time? How was the social atmosphere?', 'rows' => '12']) !!}
 </div>
 
-<div>
-	{!! Form::label('facilitiesRating', 'Facilities Rating') !!}
+<div class="star-form">
+	<label for="facilitiesRating">Facilities: <span class="light smaller">Did your place of study provide all of the equipment/amenities you needed?</span></label>
 	<div class='starrr' data-numstars='5' data-connected-input='facilitiesRating'></div>
     {!! Form::input('hidden', 'facilitiesRating', 'null') !!}</p>
 </div>
 
-<div>
-	{!! Form::label('clarityRating', 'Clarity Rating') !!}
+<div class="star-form">
+	<label for="clarityRating">Clarity: <span class="light smaller">Clarity of Course Content and Assignments</span></label>
 	<div class='starrr' data-numstars='5' data-connected-input='clarityRating'></div>
 	{!! Form::input('hidden', 'clarityRating', null) !!}
 </div>
 
-<div>
-	{!! Form::label('helpfulnessRating', 'Helpfulness Rating') !!}
+<div class="star-form">
+	<label for="helpfulnessRating">Helpfulness: <span class="light smaller">Was your lecturer/tutor very helpful?</span></label>
 	<div class='starrr' data-numstars='5' data-connected-input='helpfulnessRating'></div>
 	{!! Form::input('hidden', 'helpfulnessRating', null) !!}
 </div>
 
-<div>
-	{!! Form::label('jobProspectsRating', 'Job Prospects Rating') !!}
+<div class="star-form">
+	<label for="jobProspectsRating">Job Prospects: <span class="light smaller">Job Prospects: Industry Links? How hirable are you now?</span></label>
 	<div class='starrr' data-numstars='5' data-connected-input='jobProspectsRating'></div>
 	{!! Form::input('hidden', 'jobProspectsRating', null) !!}
 </div>
 
-<div>
-	{!! Form::label('overallRating', 'Overall Rating') !!}
+<div class="star-form">
+	<label for="overallRating">Overall: <span class="light smaller">What rating do you think your course deserves?</span></label>
 	<div class='starrr' data-numstars='5' data-connected-input='overallRating'></div>
 	{!! Form::input('hidden', 'overallRating', null) !!}
 </div>

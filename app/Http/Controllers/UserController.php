@@ -54,7 +54,7 @@ class UserController extends Controller {
 	public function store(UserRequest $request)
 	{
 		User::create($request->all());
-		
+
 		return redirect('user');
 	}
 
@@ -99,6 +99,7 @@ class UserController extends Controller {
 
 		$user->update($request->all());
 
+		session()->flash('flash_message', 'Profile successfully edited!');
 		return redirect('user');
 	}
 

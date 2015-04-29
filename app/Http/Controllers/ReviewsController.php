@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\HttpResponse;
 use App\Http\Controllers\Controller;
 use Input;
+use Illuminate\Support\Facades\DB;
 
 class ReviewsController extends Controller {
 
@@ -63,10 +64,20 @@ class ReviewsController extends Controller {
 	public function store(ReviewRequest $request) {
 
 		Review::create($request->all());
-		
-		session()->flash('flash_message', 'Review successfully posted!');
 
-		return redirect('reviews');
+		$secret   = '6LcKBgYTAAAAAJTKa3Y3NfkNdIa0L9Sb9nzauQVi'; 
+	    $response = Input::get('g-recaptcha-response');
+	    $url      = 'https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$response;
+	    $jsonObj  = file_get_contents($url);
+	    $json     = json_decode($jsonObj, true);
+
+	    if ($json['success']==true) {
+	    	session()->flash('flash_message', 'Review successfully posted!');
+			return redirect('reviews');
+	    } else {
+	    	session()->flash('flash_message', 'Google Recaptcha Error: You must check that you are not a robot!');
+	    	return Redirect::back()->with('message','Unsuccessful!') ->withInput();
+	    }
 
 	}
 
@@ -91,9 +102,19 @@ class ReviewsController extends Controller {
 
 		$review->update($request->all());
 
-		session()->flash('flash_message', 'Review successfully edited!');
+		$secret   = '6LcKBgYTAAAAAJTKa3Y3NfkNdIa0L9Sb9nzauQVi'; 
+	    $response = Input::get('g-recaptcha-response');
+	    $url      = 'https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$response;
+	    $jsonObj  = file_get_contents($url);
+	    $json     = json_decode($jsonObj, true);
 
-		return redirect('reviews');
+	    if ($json['success']==true) {
+	    	session()->flash('flash_message', 'Review successfully edited!');
+			return redirect('reviews');
+	    } else {
+	    	session()->flash('flash_message', 'Google Recaptcha Error: You must check that you are not a robot!');
+	    	return Redirect::back()->with('message','Unsuccessful!') ->withInput();
+	    }
 
 	}
 

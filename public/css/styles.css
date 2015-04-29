@@ -61,12 +61,28 @@ h2, h2 a {
 	margin-top: 20px;
 }
 
+h2 a:hover {
+	color: #F05759;
+}
+
+h2 a:active {
+	color: #142E42;
+}
+
 h3, h3 a {
 	color: #4D4D4D;
 	font-family: 'Ubuntu', Arial, sans-serif;
 	font-weight: lighter;
 	font-size: 18px;
 	line-height: 1.5em;
+}
+
+h3 a:hover {
+	color: #F05759;
+}
+
+h3 a:active {
+	color: #142E42;
 }
 
 h4, h4 a {
@@ -76,6 +92,14 @@ h4, h4 a {
 	font-size: 16px;
 	line-height: 1.5em;
 	margin: 0;
+}
+
+h4 a:hover {
+	color: #F05759;
+}
+
+h4 a:active {
+	color: #142E42;
 }
 
 .scrollToTop {
@@ -147,6 +171,26 @@ h4, h4 a {
 	font-size: 30px;
 	line-height: 1.2em;
 	letter-spacing: 1.1px;
+}
+
+.review-paragraphs {
+	margin: 30px 0;
+}
+
+.star-form {
+	width: 330px;
+}
+
+.star-form .starrr {
+	display: block;
+}
+
+.light {
+	font-weight: lighter;
+}
+
+.smaller {
+	font-size: 80%;
 }
 
 .error {
@@ -590,6 +634,7 @@ footer a:active {
 
 	.content {
 		padding: 0;
+		margin-bottom: 60px;
 	}	
 
 	.half {

@@ -21,7 +21,7 @@
 	<li>{!! link_to('auth/login', 'Login') !!}</li>
 	<li>{!! link_to('user', 'Admin View') !!}</li>
 	<li>{!! link_to('privacyPolicy', 'Privacy Policy') !!}</li>
-	<li>{!! link_to('termsAndConditions', 'Terms and Conditions') !!}</li>
+	<li class="margin-bottom">{!! link_to('termsAndConditions', 'Terms and Conditions') !!}</li>
 </ul>
 
 @stop

@@ -9,7 +9,7 @@
 
 <h3>Terms of Use</h3>
 
-<p>
+<p class="margin-bottom">
 Tertiary Reviews helps students, parents and teachers make informed decisions by promoting transparency within education. Tertiary education students use Tertiary Reviews to read and write reviews on different courses in New Zealand.
 You may read our copyrighted material free of charge, but you are prohibited from the sharing, dissemination, or sale of this material.
 You will post only truthful, non-libelous, and relevant ratings and posts.

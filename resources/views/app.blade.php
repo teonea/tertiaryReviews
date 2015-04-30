@@ -5,7 +5,7 @@
 	<meta name="description" content="{{ $description }}">
 	<meta name="keywords" content="{{ $keywords }}">
 	<link rel="stylesheet" href="{{ asset('/css/styles.css') }}"/>
-	<link rel="shortcut icon" href="http://www.example.com/myicon.ico"/>
+	<link rel="shortcut icon" href="{{asset('img/favicon.png')}}"/>
 	<link rel="stylesheet" href="{{ asset('/css/responsive-nav.css') }}"/>
 	<link rel="stylesheet" href="{{ asset('/css/responsive-styles.css') }}"/>
 	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' />

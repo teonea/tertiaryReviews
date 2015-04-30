@@ -14,7 +14,7 @@
 
 </div>
 
-<div class="half">
+<div class="half margin-bottom">
 	<div class="contact-twitter-feed">
 		<a class="twitter-timeline" href="https://twitter.com/TertiaryReviews" width="400" data-widget-id="592796352339386368">Tweets by @TertiaryReviews</a>
 	</div>

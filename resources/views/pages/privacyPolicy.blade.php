@@ -26,7 +26,7 @@ We respond to subpoenas, court orders or legal process.</p>
 If you prefer, you can turn off cookies in your web browser by changing its security settings.</p>
 
 <h3>Changes to this Privacy Policy</h3>
-<p class="bottom-space">Tertiary Reviews may amend this policy from time to time. If we make any substantial changes in the way we use your personal information we will notify you by posting a prominent announcement on our pages.
+<p class="margin-bottom">Tertiary Reviews may amend this policy from time to time. If we make any substantial changes in the way we use your personal information we will notify you by posting a prominent announcement on our pages.
 </p>
 
 @stop

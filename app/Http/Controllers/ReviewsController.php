@@ -57,7 +57,7 @@ class ReviewsController extends Controller {
 		$course = Course::orderBy('courseName', 'ASC')->lists('courseName', 'id');
 		$subjects = Subject::orderBy('subjectName', 'ASC')->lists('subjectName', 'id');
 
-		return view('reviews.create', compact('school', 'course', 'subjects', 'page', 'description', 'keywords'));
+		return view('reviews.create', compact('school', 'course', 'subjects', 'page', 'description', 'keywords'))->with('subjects', $subjects);
 
 	}
 

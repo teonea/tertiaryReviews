@@ -10,6 +10,7 @@
 <div>
 	<label for="">Subjects</label>
 	<select name="subject" id="subject">
+		<option>- Select your Subject -</option>
 		@foreach($subjects as $subject)
 			<option value="{{ $subject->id }}">{{ $subject->subjectName }}</option>
 		@endforeach
@@ -18,6 +19,7 @@
 <div>
 	<label>Courses</label>
 	<select name="course" id="course">
+		<option>- Select your Subject First -</option>
 		<option value=""></option>
 	</select>
 </div>

@@ -6,7 +6,7 @@
 
 <hr />
 
-<h2>{{ $course->courseName }} <span class="smaller light">(@foreach ($course->review as $review){{ $review->getSubjectName() }}@endforeach)</span></h2>
+<h2>{{ $course->courseName }} <span class="smaller light">({{ $course->getSubjectName() }})</span></h2>
 
 
 

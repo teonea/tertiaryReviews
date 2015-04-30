@@ -42,6 +42,12 @@ class Course extends Model {
 
 	}
 
+	public function getSubjectName() {
+
+		return Subject::where('id', $this->subject_id)->first()->subjectName;
+
+	}
+
 	public function facilitiesRatingAverage() {
 
 		$result = Review::avg('facilitiesRating');

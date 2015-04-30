@@ -3,15 +3,29 @@
     {!! form::select('school_id', $school, null) !!}
 </div>
 
-<div>
+<!-- <div>
     {!! Form::label('subject_id', 'Subject') !!}
-    {!! form::select('subject_id', $subject, null) !!}
+    {!! form::select('subject_id', $subjects, null) !!}
+</div> -->
+<div>
+	<label for="">Subjects</label>
+	<select name="subject" id="subject">
+		@foreach($subjects as $subject)
+			<option value="{{ $subject->id }}">{{ $subject->subjectName }}</option>
+		@endforeach
+	</select>
+</div>
+<div>
+	<label>Courses</label>
+	<select name="course" id="course">
+		<option value=""></option>
+	</select>
 </div>
 
-<div>
+<!-- <div>
     {!! Form::label('course_id', 'Course') !!}
     {!! form::select('course_id', $course, null) !!}
-</div>
+</div> -->
 
 <div>
 	{!! Form::label('title', 'Title') !!}

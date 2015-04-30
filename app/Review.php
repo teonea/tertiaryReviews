@@ -56,6 +56,7 @@ class Review extends Model {
 		return Subject::where('id', $this->subject_id)->first()->subjectName;
 
 	}
+
 	
 	
 

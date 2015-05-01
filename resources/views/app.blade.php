@@ -83,17 +83,20 @@
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script>
-	$('#subject').on('change',function(e){
-		console.log(e);
-		var sub_id = e.target.value;
+	<script> 
 
+	
+
+	$('#subject_id').on('change',function(e){
+		console.log(e);
+		var school_id = $('#school_id').val();
+		var sub_id = e.target.value;
 		//ajax
-		$.get('/ajax-course?sub_id=' + sub_id, function(data){
+		$.get('/ajax-course?sub_id=' + sub_id + "&school_id=" + school_id, function(data){
 			//success data
-			$('#course').empty();
+			$('#course_id').empty();
 			$.each(data, function(index, coursesObj){
-				$('#course').append('<option value="'+coursesObj.id+'">'+coursesObj.courseName+'</option>');
+				$('#course_id').append('<option value="'+coursesObj.id+'">'+coursesObj.courseName+'</option>');
 			});
 		}); 
 

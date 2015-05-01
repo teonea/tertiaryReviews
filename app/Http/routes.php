@@ -39,26 +39,14 @@ Route::get('courses', 'CoursesController@search');
 Route::resource('schools', 'SchoolsController');
 Route::get('schools/{id}/courses', 'SchoolsController@showcourses');
 Route::get('schools', 'SchoolsController@search');
-
-Route::get('reviews/create', function(){
-	
-	$page = '';
-	$description = '';
-	$keywords = '';
-	$subjects = Subject::all();
-	$school = School::orderBy('schoolName', 'ASC')->lists('schoolName', 'id');
-	$course = Course::orderBy('courseName', 'ASC')->lists('id', 'courseName');
-	
-	return view('reviews.create', compact('course', 'school', 'course', 'page', 'description', 'keywords'))->with('subjects', $subjects);
-});
-
 Route::get('/ajax-course', function(){
+
+	$school_id = Input::get('school_id');
 	$sub_id = Input::get('sub_id');
-	$courses = Course::where('subject_id', '=', $sub_id)->get();
+	$courses = Course::where('subject_id', '=', $sub_id)->where('school_id', '=', $school_id)->get();
 
 	return Response::json($courses);
 });
-
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

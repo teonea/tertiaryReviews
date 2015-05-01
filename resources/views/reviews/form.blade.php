@@ -1,15 +1,25 @@
-<div>
+<!-- <div>
     {!! Form::label('school_id', 'Tertiary Education Provider') !!}
     {!! form::select('school_id', $school, null) !!}
-</div>
+</div> -->
 
 <!-- <div>
     {!! Form::label('subject_id', 'Subject') !!}
     {!! form::select('subject_id', $subjects, null) !!}
 </div> -->
+
+<div>
+	<label for="">School</label>
+	<select name="school_id" id="school_id">
+		<option>- Select your school -</option>
+		@foreach($schools as $school)
+			<option value="{{ $school->id }}">{{ $school->schoolName }}</option>
+		@endforeach
+	</select>
+</div>
 <div>
 	<label for="">Subjects</label>
-	<select name="subject" id="subject">
+	<select name="subject_id" id="subject_id">
 		<option>- Select your Subject -</option>
 		@foreach($subjects as $subject)
 			<option value="{{ $subject->id }}">{{ $subject->subjectName }}</option>
@@ -18,9 +28,9 @@
 </div>
 <div>
 	<label>Courses</label>
-	<select name="course" id="course">
-		<option>- Select your Subject First -</option>
-		<option value=""></option>
+	<select name="course_id" id="course_id">
+		
+		<option value="">- Select your Subject First -</option>
 	</select>
 </div>
 

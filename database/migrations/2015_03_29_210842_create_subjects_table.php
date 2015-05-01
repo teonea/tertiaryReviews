@@ -16,7 +16,6 @@ class CreateSubjectsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->text('subjectName');
-
 		});
 	}
 

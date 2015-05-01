@@ -53,8 +53,8 @@ class ReviewsController extends Controller {
 		$description = 'Write honest, unbiased reviews on tertiary education courses around New Zealand.';
 		$keywords = 'write reviews, nz, review tertiary institutes, review courses, education';
 
-		$subjects = Subject::all();
-		$schools = School::all();
+		$subjects = Subject::orderBy('subjectName', 'ASC')->get();
+		$schools = School::orderBy('schoolName', 'ASC')->get();
 		$school = School::orderBy('schoolName', 'ASC')->lists('schoolName', 'id');
 		$course = Course::orderBy('courseName', 'ASC')->lists('id', 'courseName');
 		

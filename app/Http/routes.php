@@ -43,7 +43,7 @@ Route::get('/ajax-course', function(){
 
 	$school_id = Input::get('school_id');
 	$sub_id = Input::get('sub_id');
-	$courses = Course::where('subject_id', '=', $sub_id)->where('school_id', '=', $school_id)->get();
+	$courses = Course::where('subject_id', '=', $sub_id)->where('school_id', '=', $school_id)->orderBy('courseName', 'ASC')->get();
 
 	return Response::json($courses);
 });

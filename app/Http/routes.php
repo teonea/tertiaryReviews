@@ -38,7 +38,6 @@ Route::get('courses', 'CoursesController@search');
 
 Route::resource('schools', 'SchoolsController');
 Route::get('schools/{id}/courses', 'SchoolsController@showcourses');
-Route::get('schools', 'SchoolsController@search');
 Route::get('/ajax-course', function(){
 
 	$school_id = Input::get('school_id');

@@ -43,7 +43,9 @@
 	</ul>
 
 @else
-	<p>No results for <span class="b">'{{ $query }}'</span>. Try to search specifically.</p>
+	@if($query == true)
+		<p>No results for <span class="b">'{{ $query }}'</span>. Try to search specifically.</p>
+	@endif	
 	<p>If your school is missing please contact us {!! link_to('contact', 'here') !!}.</p>
 @endif
 

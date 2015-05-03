@@ -39,7 +39,9 @@
 
 @else
 	
-	<p>No results for <span class="b">'{{ $query }}'</span>. Try to search specifically.</p>
+	@if($query == true)
+		<p>No results for <span class="b">'{{ $query }}'</span>. Try to search specifically.</p>
+	@endif
 	<p>You can list your course {!! link_to('courses/create', 'here') !!} if it is missing.</p>
 
 @endif

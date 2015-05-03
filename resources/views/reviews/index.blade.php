@@ -9,21 +9,25 @@
 
 <h2>Browse by Review</h2>
 
+@if ($reviews->count())
 <p>Below are our most recently posted reviews. You can also search for reviews.</p>
+@else
+<p>We haven't got any reviews listed. You can post a review <span class="pink b">{!! link_to('reviews/create', 'here') !!}.</span></p>
+@endif
 
-@include('search.index')
+
 
 @if ($reviews->count())
 	
+	@include('search.index')
+
 	@if($query == true)
-	<h2>Results for <span class="pink">'{{ $query }}'</span></h2>
+		<h2>Results for <span class="pink">'{{ $query }}'</span></h2>
 	@endif
 
-	@if (count($reviews) >= 1)
+	{!! $reviews->render() !!}
 
-		{!! $reviews->render() !!}
-
-		@foreach ($reviews as $review)
+	@foreach ($reviews as $review)
 
 		<h2>
 			<a href="{{ url('/reviews', $review->id) }}">{{ $review->title }}</a>
@@ -38,21 +42,20 @@
 				</div>
 			@endif
 		</h2>
+
 		<p>{{ $review->courseType }}</p>
+
 		<hr />
 
-		@endforeach
+	@endforeach
 
-		{!! $reviews->render() !!}
-
-	@else
-		
-		<p>Sorry, we currently have no reviews listed. You can post a review {!! link_to('reviews/create', 'here') !!}.</p>
-
-	@endif
+	{!! $reviews->render() !!}
 
 @else
-	<p>No results for <span class="b">'{{ $query }}'</span>. Try to search specifically.</p>
+	@if($query == true)
+		<p>No results for <span class="b">'{{ $query }}'</span>.</p>
+	@endif	
 @endif
+
 
 @stop

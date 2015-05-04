@@ -83,25 +83,7 @@
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script> 
 
-	
-
-	$('#subject_id').on('change',function(e){
-		console.log(e);
-		var school_id = $('#school_id').val();
-		var sub_id = e.target.value;
-		//ajax
-		$.get('/ajax-course?sub_id=' + sub_id + "&school_id=" + school_id, function(data){
-			//success data
-			$('#course_id').empty();
-			$.each(data, function(index, coursesObj){
-				$('#course_id').append('<option value="'+coursesObj.id+'">'+coursesObj.courseName+'</option>');
-			});
-		}); 
-
-	});
-	</script>
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>

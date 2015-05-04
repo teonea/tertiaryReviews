@@ -25,9 +25,15 @@ class CoursesController extends Controller {
 		$description = 'Course listings where you can write reviews.';
 		$keywords = 'courses nz, tertiary education courses, write a review, list a course, course reviews nz';
 
-		$courses = Course::orderBy('courseName', 'ASC')->paginate(15);
+		$query = Input::get('q');
 
-		return view('courses.index', compact('courses', 'page', 'description', 'keywords'));
+		if($query) {
+			$courses = Course::where('courseName', 'LIKE', "%$query%")->orderBy('courseName', 'ASC')->paginate(15);
+		} else {
+			$courses = Course::orderBy('courseName', 'ASC')->paginate(15);
+		}
+
+		return view('courses.index', compact('query', 'courses', 'page', 'description', 'keywords'));
 
 	}
 
@@ -112,24 +118,6 @@ class CoursesController extends Controller {
 	    	return Redirect::back()->with('message','Unsuccessful!') ->withInput();
 	    }
 
-	}
-
-	public function search()
-	{
-
-		$page = 'Courses';
-		$description = 'Search for tertiary Education courses provided in New Zealan where you can list courses or write reviews.';
-		$keywords = 'search, browse, search tertiary education course';
-
-		$query = Input::get('q');
-
-		if($query) {
-			$courses = Course::where('courseName', 'LIKE', "%$query%")->orderBy('courseName', 'ASC')->paginate(15);
-		} else {
-			$courses = Course::orderBy('courseName', 'ASC')->paginate(15);
-		}
-
-		return view('courses.index', compact('query', 'courses', 'page', 'description', 'keywords'));
 	}
 
 	public function destroy($id)

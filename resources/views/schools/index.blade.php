@@ -11,7 +11,6 @@
 
 @include('search.index')
 
-
 @if ($schools->count())
 	
 	@if($query == true)

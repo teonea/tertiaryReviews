@@ -27,10 +27,15 @@ class ReviewsController extends Controller {
 		$description = 'Honest, unbiased reviews on tertiary education courses around New Zealand.';
 		$keywords = 'university reviews, tertiary education reviews, polytech reviews, course reviews, courses new zealand, education new zealand';
 
+		$query = Input::get('q');
 
-		$reviews = Review::latest('created_at')->paginate(10);
+		if($query) {
+			$reviews = Review::where('title', 'LIKE', "%$query%")->orWhere('courseType', 'LIKE', "%$query%")->orWhere('favouriteAspects', 'LIKE', "%$query%")->orWhere('leastFavouriteAspects', 'LIKE', "%$query%")->orWhere('courseReview', 'LIKE', "%$query%")->latest('created_at')->paginate(15);
+		} else {
+			$reviews = Review::latest('created_at')->paginate(10);
+		}
 
-		return view('reviews.index', compact('reviews', 'page', 'description', 'keywords'));
+		return view('reviews.index', compact('query', 'reviews', 'page', 'description', 'keywords'));
 
 	}
 
@@ -117,24 +122,6 @@ class ReviewsController extends Controller {
 	    	return Redirect::back()->with('message','Unsuccessful!') ->withInput();
 	    }
 
-	}
-
-	public function search()
-	{
-
-		$page = 'Reviews';
-		$description = 'Search Reviews posted in Tertiary Reviews NZ.';
-		$keywords = 'search reviews, tertiary education course reviews';
-
-		$query = Input::get('q');
-
-		if($query) {
-			$reviews = Review::where('title', 'LIKE', "%$query%")->orWhere('courseType', 'LIKE', "%$query%")->orWhere('favouriteAspects', 'LIKE', "%$query%")->orWhere('leastFavouriteAspects', 'LIKE', "%$query%")->orWhere('courseReview', 'LIKE', "%$query%")->latest('created_at')->paginate(15);
-		} else {
-			$reviews = Review::latest('created_at')->paginate(10);
-		}
-
-		return view('reviews.index', compact('query', 'reviews', 'page', 'description', 'keywords'));
 	}
 
 	public function destroy($id)

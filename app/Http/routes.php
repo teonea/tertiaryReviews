@@ -17,8 +17,6 @@ use App\Subject;
 Route::get('/', 'WelcomeController@index');
 Route::get('home', 'WelcomeController@home');
 
-
-
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 Route::get('privacyPolicy', 'PagesController@privacyPolicy');
@@ -28,13 +26,8 @@ Route::get('termsAndConditions', 'PagesController@termsAndConditions');
 Route::resource('user', 'UserController');
 
 Route::resource('reviews', 'ReviewsController');
-Route::get('reviews', 'ReviewsController@search');
-
-
 
 Route::resource('courses', 'CoursesController');
-Route::get('courses', 'CoursesController@search');
-
 
 Route::resource('schools', 'SchoolsController');
 Route::get('schools/{id}/courses', 'SchoolsController@showcourses');

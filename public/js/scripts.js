@@ -16,6 +16,7 @@ $('.starrr:eq(0)').on('starrr:change', function(e, value){
 
 $('#subject_id').on('change',function(e){
 	console.log(e);
+
 	var school_id = $('#school_id').val();
 	var sub_id = e.target.value;
 	//ajax

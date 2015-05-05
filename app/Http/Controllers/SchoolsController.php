@@ -57,6 +57,7 @@ class SchoolsController extends Controller {
 
 		if($query) {
 			$school = School::findOrFail($id);
+			$data = School::where('id', $id)->with('courses');
 			$courses = Course::where('courseName', 'LIKE', "%$query%")->orderBy('courseName', 'ASC')->paginate(15);
 		} else {
 			$courses = Course::orderBy('courseName', 'ASC')->paginate(15);

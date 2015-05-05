@@ -33,7 +33,6 @@
 
 	<div>
 		<button type="submit">Login</button>
-		<p class="pink"><a class="light" href="{{ url('/password/email') }}">Forgot Your Password?</a></p>
 	</div>
 
 </form>

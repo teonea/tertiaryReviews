@@ -94,11 +94,13 @@ class ReviewsController extends Controller {
 		$keywords = 'edit reviews';
 
 		$review = Review::findOrFail($id);
+		$schools = School::all();
+		$subjects = Subject::all();
 		$school = School::orderBy('schoolName', 'ASC')->lists('schoolName', 'id');
 		$course = Course::orderBy('courseName', 'ASC')->lists('courseName', 'id');
 		$subject = Subject::orderBy('subjectName', 'ASC')->lists('subjectName', 'id');
 		
-		return view('reviews.edit', compact('review', 'school', 'course', 'subject', 'page', 'description', 'keywords'));
+		return view('reviews.edit', compact('review', 'school', 'schools', 'course', 'subject', 'subjects', 'page', 'description', 'keywords'));
 
 	}
 

@@ -8,7 +8,7 @@
 	
 <h2>{{ $school->schoolName }} Courses</h2>
 
-<h3>Search for a course offered at <span class="b">{{ $school->schoolName }}.</span>.</h3>
+<h3>Search for a course offered at <span class="b">{{ $school->schoolName }}</span>.</h3>
 
 @include('search.index')
 

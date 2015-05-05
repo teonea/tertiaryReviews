@@ -8,17 +8,12 @@
 
 <h2>{{ $course->courseName }} <span class="smaller light">({{ $course->getSubjectName() }})</span></h2>
 
-
-
-	
-
-
 @if (count($course->review) >= 1)
 
 	<h3>Course Rating Totals</h3>
 	<ul class="rating-ul">
 		<li class="b">Overall Rating: <span class="pink">{{ $course->overallRatingAverage() }}%</span></li>
-		<li>Facilities Rating: <span class="pink">{{ $course->facilitiesRatingAverage() }}%</span></li>
+		<li>Facilities Rating: <span class="pink">{{ $course->overallRatingAverage() }}%</span></li>
 		<li>Clarity Rating: <span class="pink">{{ $course->clarityRatingAverage() }}%</span></li>
 		<li>Helpfulness Rating: <span class="pink">{{ $course->helpfulnessRatingAverage() }}%</span></li>
 		<li>Job Prospects Rating: <span class="pink">{{ $course->jobProspectsRatingAverage() }}%</span></li>

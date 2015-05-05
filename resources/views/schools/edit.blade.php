@@ -6,6 +6,8 @@
 
 <hr />
 
+@include('errors.list')
+
 {!! Form::model($school, ['method' => 'PATCH', 'action' => ['SchoolsController@update', $school->id]]) !!}
 	
 	@include('schools.form')
@@ -15,7 +17,5 @@
 	</div>
 
 {!! Form::close() !!}
-
-@include('errors.list')
 
 @stop

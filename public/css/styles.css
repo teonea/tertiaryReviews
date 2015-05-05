@@ -1,6 +1,7 @@
 body, html {
 	margin: 0;
 	padding: 0;
+	height: 100%;
 }
 
 p {
@@ -117,7 +118,7 @@ h4 a:active {
 	display:none;
 	background: url('arrow_up.png') no-repeat 0px 20px;
 }
-
+.push { height:15px; }
 .scrollToTop:hover {
 	text-decoration:none;
 }
@@ -158,6 +159,13 @@ h4 a:active {
 	color: #F05759;
 }
 
+.page-wrapper {
+	min-height: 100%;
+	margin: 0 auto -15px;
+	display: block;
+	content: "";
+}
+
 #welcome-msg {
 	font-family: 'Libre Baskerville', serif;
 	font-weight: bold;
@@ -179,6 +187,16 @@ h4 a:active {
 
 .star-form {
 	width: 330px;
+}
+
+.star-form input {
+	display: none;
+}
+
+@-moz-document url-prefix() {
+    .star-form input {
+    	display: block;
+    }
 }
 
 .star-form .starrr {
@@ -401,8 +419,8 @@ form {
 }
 
 input[type='number'] {
-	background-color: #fff;
-	width: 20px;
+	background-color: #eee;
+	width: 40px;
 }
 
 .item-delete form input:hover {
@@ -474,10 +492,7 @@ select {
 	color: #888;
 	display: block;
 	width: 330px;
-}
-
-#wr-form div input, #wr-form div textarea, #wr-form div select {
-	margin-bottom: 20px;
+	height: 40px;
 }
 
 #wr-form div input[type='checkbox'] {
@@ -569,13 +584,9 @@ select {
 }
 
 footer {
+	height: 15px;
 	background-color: #fff;
-    bottom: 0;
     font-size: 12px;
-    left: 0;
-    margin-bottom: 0;
-    position: fixed;
-    right: 0;
 }
 
 footer ul {
@@ -615,8 +626,9 @@ footer a:active {
 	.twitter-feed {
 		margin: 40px 0;
 		width: 46%;
-		position: absolute;
 		right: 0px;
+		content: "";
+		display: block;
 	}
 
 	#welcome-msg {
@@ -636,8 +648,51 @@ footer a:active {
 		background-color: #eee;
 	}
 
-	#wr-form div input, #wr-form div textarea, #wr-form div select {
-		margin-bottom: 20px;
+	#wr-form a {
+		text-decoration: underline;
+	}
+
+	.content {
+		padding: 0;
+		margin-bottom: 60px;
+	}	
+
+	.half {
+		width: 46%;
+		padding-right: 30px;
+		float: left;
+	}
+
+}
+
+@media all and (min-width: 880px) {
+
+	.twitter-feed {
+		margin: 40px 0;
+		width: 46%;
+		position: absolute;
+		right: 0px;
+	}
+
+	.twitter-timeline {
+		width: 330px !important;
+	}
+
+	#welcome-msg {
+		width: 360px;
+		font-size: 40px;
+	}
+
+	#wr-form div label {
+		float: left;
+		text-align: right; 
+		width: 200px;
+		margin-right: 20px;
+	}
+
+	#wr-form div input[type='checkbox'] {
+		border: none;
+		background-color: #eee;
 	}
 
 	#wr-form a {

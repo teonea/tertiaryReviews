@@ -1,15 +1,5 @@
-<!-- <div>
-    {!! Form::label('school_id', 'Tertiary Education Provider') !!}
-    {!! form::select('school_id', $school, null) !!}
-</div> -->
-
-<!-- <div>
-    {!! Form::label('subject_id', 'Subject') !!}
-    {!! form::select('subject_id', $subjects, null) !!}
-</div> -->
-
 <div>
-	<label for="">School</label>
+	<label for="school_id">School</label>
 	<select name="school_id" id="school_id">
 		<option>- Select your school -</option>
 		@foreach($schools as $school)
@@ -17,8 +7,9 @@
 		@endforeach
 	</select>
 </div>
+
 <div>
-	<label for="">Subjects</label>
+	<label for="subject_id">Subjects</label>
 	<select name="subject_id" id="subject_id">
 		<option>- Select your Subject -</option>
 		@foreach($subjects as $subject)
@@ -26,18 +17,14 @@
 		@endforeach
 	</select>
 </div>
+
 <div>
-	<label>Courses</label>
+	<label for="course_id">Courses</label>
 	<select name="course_id" id="course_id">
 		
 		<option value="">- Select your Subject First -</option>
 	</select>
 </div>
-
-<!-- <div>
-    {!! Form::label('course_id', 'Course') !!}
-    {!! form::select('course_id', $course, null) !!}
-</div> -->
 
 <div>
 	{!! Form::label('title', 'Title') !!}
@@ -67,31 +54,31 @@
 <div class="star-form">
 	<label for="facilitiesRating">Facilities: <span class="light smaller">Did your place of study provide all of the equipment/amenities you needed?</span></label>
 	<div class='starrr' data-numstars='5' data-connected-input='facilitiesRating'></div>
-    {!! Form::input('hidden', 'facilitiesRating', 'null') !!}</p>
+    {!! Form::input('number', 'facilitiesRating', null, $attributes = ['min' => '1', 'max' => '5']) !!}
 </div>
 
 <div class="star-form">
 	<label for="clarityRating">Clarity: <span class="light smaller">Clarity of Course Content and Assignments</span></label>
 	<div class='starrr' data-numstars='5' data-connected-input='clarityRating'></div>
-	{!! Form::input('hidden', 'clarityRating', null) !!}
+	{!! Form::input('number', 'clarityRating', null) !!}
 </div>
 
 <div class="star-form">
 	<label for="helpfulnessRating">Helpfulness: <span class="light smaller">Was your lecturer/tutor very helpful?</span></label>
 	<div class='starrr' data-numstars='5' data-connected-input='helpfulnessRating'></div>
-	{!! Form::input('hidden', 'helpfulnessRating', null) !!}
+	{!! Form::input('number', 'helpfulnessRating', null) !!}
 </div>
 
 <div class="star-form">
 	<label for="jobProspectsRating">Job Prospects: <span class="light smaller">Job Prospects: Industry Links? How hirable are you now?</span></label>
 	<div class='starrr' data-numstars='5' data-connected-input='jobProspectsRating'></div>
-	{!! Form::input('hidden', 'jobProspectsRating', null) !!}
+	{!! Form::input('number', 'jobProspectsRating', null) !!}
 </div>
 
 <div class="star-form">
 	<label for="overallRating">Overall: <span class="light smaller">What rating do you think your course deserves?</span></label>
 	<div class='starrr' data-numstars='5' data-connected-input='overallRating'></div>
-	{!! Form::input('hidden', 'overallRating', null) !!}
+	{!! Form::input('number', 'overallRating', null) !!}
 </div>
 
 <div class="checbox-div">

@@ -25,7 +25,7 @@
 		<h2>Results for <span class="pink">'{{ $query }}'</span></h2>
 	@endif
 
-	{!! $reviews->render() !!}
+	{!! str_replace('/?', '?', $reviews->render()) !!}
 
 	@foreach ($reviews as $review)
 
@@ -49,7 +49,7 @@
 
 	@endforeach
 
-	{!! $reviews->render() !!}
+	{!! str_replace('/?', '?', $reviews->render()) !!}
 
 @else
 	@if($query == true)

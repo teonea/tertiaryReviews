@@ -23,9 +23,16 @@ $('#subject_id').on('change',function(e){
 	$.get('/ajax-course?sub_id=' + sub_id + "&school_id=" + school_id, function(data){
 		//success data
 		$('#course_id').empty();
+		
 		$.each(data, function(index, coursesObj){
 			$('#course_id').append('<option value="'+coursesObj.id+'">'+coursesObj.courseName+'</option>');
 		});
+
+		if(!data.length) {
+			$('#course_id').append('<option>No courses listed. You have to list the course first.</option>');
+		}
+		
+		
 	}); 
 
 });

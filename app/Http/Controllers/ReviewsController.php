@@ -82,7 +82,7 @@ class ReviewsController extends Controller {
 			return redirect('reviews');
 	    } else {
 	    	session()->flash('flash_message', 'Google Recaptcha Error: You must check that you are not a robot!');
-	    	return Redirect::back()->with('message','Unsuccessful!') ->withInput();
+	    	return Redirect::back()->with('message','Unsuccessful!')->withInput();
 	    }
 
 	}

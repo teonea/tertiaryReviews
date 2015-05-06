@@ -39,13 +39,13 @@ class PagesController extends Controller {
 
 	}
 
-	public function sitemap() {
+	public function siteMap() {
 
 		$page = 'Tertiary Reviews NZ - Site Map';
 		$description = 'Tertiary Reviews site map to make the site easier to navigate.';
 		$keywords = 'tertiary reviews site map, reviews, navigation, user friendly, education';
 
-		return view('pages.sitemap', compact('page', 'description', 'keywords'));
+		return view('pages.siteMap', compact('page', 'description', 'keywords'));
 
 	}
 

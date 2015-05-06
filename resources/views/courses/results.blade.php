@@ -19,7 +19,7 @@
 
 @if (count($courses) >= 1)
 	
-	{!! $courses->render() !!}
+	{!! str_replace('/?', '?', $courses->render()) !!}
 
 	<ul class="item-list">
 		@foreach ($courses as $course)
@@ -45,9 +45,6 @@
 
 @endif
 
-
-
-
-{!! $courses->render() !!}
+{!! str_replace('/?', '?', $courses->render()) !!}
 
 @stop

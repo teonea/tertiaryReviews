@@ -77,7 +77,7 @@
 				@endif
 				<li>{!! link_to('about', 'About') !!}</li>
 				<li>{!! link_to('contact', 'Contact') !!}</li>
-				<li>{!! link_to('sitemap', 'Site Map') !!}</li>
+				<li>{!! link_to('siteMap', 'Site Map') !!}</li>
 				<li>{!! link_to('termsAndConditions', 'Terms &amp; Conditions') !!}</li>
 				<li>{!! link_to('privacyPolicy', 'Privacy Policy') !!}</li>
 			</ul>

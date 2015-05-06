@@ -20,7 +20,7 @@ Route::get('home', 'WelcomeController@home');
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 Route::get('privacyPolicy', 'PagesController@privacyPolicy');
-Route::get('sitemap', 'PagesController@sitemap');
+Route::get('siteMap', 'PagesController@sitemap');
 Route::get('termsAndConditions', 'PagesController@termsAndConditions');
 
 Route::resource('user', 'UserController');

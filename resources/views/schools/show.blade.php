@@ -19,7 +19,7 @@
 </ul>
 
 
-<h4>{!! link_to_action('SchoolsController@showcourses', 'View Courses', $school->id) !!}</h4>
+<h4 id="view-courses">{!! link_to_action('SchoolsController@showcourses', 'View Courses', $school->id) !!}</h4>
 
 @if(Auth::check())
 	<div class="show-delete item-delete">

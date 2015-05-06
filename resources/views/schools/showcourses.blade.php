@@ -10,23 +10,27 @@
 
 @if (count($school->courses) >= 1)
 	<h3>Search for a course offered at <span class="b">{{ $school->schoolName }}</span>.</h3>
-	@include('search.index')
 @else 
 	<h3>No courses listed for {{ $school->schoolName }}, you can list a course <span class="b pink">{!! link_to('courses/create', 'here') !!}</span>.</h3>
 @endif
 
-@if ($school->courses->count())
+<p>This search is not working yet mada fukka waaaah</p>
+
+@include('search.index')
+
+@if ($courses->count())
 	
 	@if($query == true)
 	<h2>Results for <span class="pink">'{{ $query }}'</span></h2>
 	@endif
 
-	@if (count($school->courses) >= 1)
+	@if (count($courses) >= 1)
 
 		<ul class="item-list">
 			@foreach ($school->courses as $course)
 			<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a><hr /></li>
 			@endforeach
+			
 		</ul>
 
 	@else
@@ -36,12 +40,8 @@
 
 	@endif
 
-	@if (count($school->courses) >= 1)
-	
-@endif
-
 @else
-	@if (count($school->courses) >= 1)
+	@if ($query == true)
 		<p>No results for <span class="b">'{{ $query }}'</span>. Try to search specifically.</p>
 	@endif
 	<p>If your school or course is missing please contact us {!! link_to('contact', 'here') !!}.</p>

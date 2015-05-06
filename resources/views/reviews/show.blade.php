@@ -68,9 +68,8 @@
 		</li>
 	</ul>
 	
-
-	<h4>{!! link_to_action('CoursesController@show', 'Read more reviews on this course here', $review->course_id) !!}</h4>
-	<h4>{!! link_to_action('SchoolsController@show', 'Check out this school here', $review->school_id) !!}</h4>
+	<h4>{!! link_to_action('CoursesController@show', 'Read more reviews on this course', $review->course_id) !!}</h4>
+	<h4>{!! link_to_action('SchoolsController@show', 'Learn more about this school', $review->school_id) !!}</h4>
 
 	@if(Auth::check())
 		<div class="show-delete item-delete">

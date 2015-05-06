@@ -55,14 +55,13 @@ class SchoolsController extends Controller {
 
 		$query = Input::get('q');
 
+		$school = School::findOrFail($id);
+		$data = School::where('id', $id)->with('courses');
+		
 		if($query) {
-			$school = School::findOrFail($id);
-			$data = School::where('id', $id)->with('courses');
 			$courses = Course::where('courseName', 'LIKE', "%$query%")->orderBy('courseName', 'ASC')->paginate(15);
 		} else {
 			$courses = Course::orderBy('courseName', 'ASC')->paginate(15);
-			$data = School::where('id', $id)->with('courses');
-			$school = School::findOrFail($id);
 		}
 
 		return view('schools.showcourses', compact('query', 'data', 'school','courses', 'page', 'description', 'keywords'));

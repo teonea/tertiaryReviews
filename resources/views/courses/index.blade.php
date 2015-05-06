@@ -17,8 +17,8 @@
 	<h2>Results for <span class="pink">'{{ $query }}'</span></h2>
 	@endif
 
-	{!!  $courses->render()  !!}
-
+	{!! str_replace('/?', '?', $courses->render()) !!}
+	
 	<ul class="item-list">
 		@foreach ($courses as $course)
 		<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a>
@@ -46,6 +46,6 @@
 
 @endif
 
-{!!  $courses->render()  !!}
+{!! str_replace('/?', '?', $courses->render()) !!}
 
 @stop

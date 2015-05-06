@@ -94,6 +94,11 @@ h4, h4 a {
 	font-size: 16px;
 	line-height: 1.5em;
 	margin: 0;
+	text-decoration: none;
+}
+
+#view-courses a {
+	padding: 20px;
 }
 
 h4 a:hover {
@@ -102,6 +107,20 @@ h4 a:hover {
 
 h4 a:active {
 	color: #142E42;
+}
+
+#view-courses {
+	padding: 10px 0 9px 0;
+	border: 2px solid #4D4D4D;
+	width: 155px;
+}
+
+#view-courses:hover {
+	border-color: #F05759;
+}
+
+#view-courses:active {
+	border-color: #142E42;
 }
 
 .scrollToTop {
@@ -119,7 +138,11 @@ h4 a:active {
 	display:none;
 	background: url('arrow_up.png') no-repeat 0px 20px;
 }
-.push { height:15px; }
+
+.push {
+	height:10px;
+}
+
 .scrollToTop:hover {
 	text-decoration:none;
 }
@@ -161,7 +184,7 @@ h4 a:active {
 }
 
 .page-wrapper {
-	min-height: 100%;
+	min-height: 92%;
 	margin: 0 auto;
 	display: block;
 	content: "";
@@ -584,7 +607,7 @@ select {
 }
 
 footer {
-	height: 15px;
+	height: 10px;
 	background-color: #fff;
     font-size: 12px;
 }
@@ -620,47 +643,13 @@ footer a:active {
 	color: #777;
 }
 
-
-@media all and (min-width: 880px) {
-
-	.twitter-feed {
-		margin: 40px 0;
-		width: 46%;
-		right: 0px;
-		content: "";
-		display: block;
-	}
-
-	#wr-form div label {
-		float: left;
-		text-align: right; 
-		width: 200px;
-		margin-right: 20px;
-	}
-
-	#wr-form div input[type='checkbox'] {
-		border: none;
-		background-color: #eee;
-	}
-
-	#wr-form a {
-		text-decoration: underline;
-	}
-
-	.content {
-		padding: 0;
-		margin-bottom: 60px;
-	}	
-
-	.half {
-		width: 46%;
-		padding-right: 30px;
-		float: left;
-	}
-
+.half {
+	float: left;
+	width: 100%;
+	padding-right: 30px;
 }
 
-@media all and (min-width: 880px) {
+@media screen and (min-width: 880px) {
 
 	.twitter-feed {
 		margin: 40px 0;
@@ -696,8 +685,6 @@ footer a:active {
 
 	.half {
 		width: 46%;
-		padding-right: 30px;
-		float: left;
 	}
 
 }

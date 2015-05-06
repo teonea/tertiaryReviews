@@ -32,22 +32,22 @@
 
 <div>
 	{!! Form::label('courseType', 'Course Type') !!}
-	{!! Form::textarea('courseType', null, $attributes = ['placeholder' => 'Was it a large or small class? Was it practical? How many lessons per week?', 'rows' => '6', 'required' => 'required']) !!}
+	{!! Form::textarea('courseType', null, $attributes = ['placeholder' => 'Was it a large or small class? Was it practical? How many lessons per week?', 'rows' => '4', 'required' => 'required']) !!}
 </div>
 
 <div>
 	{!! Form::label('favouriteAspects', 'Favourite Aspects') !!}
-	{!! Form::textarea('favouriteAspects', null, $attributes = ['placeholder' => 'What did you like most about your course?', 'rows' => '10', 'required' => 'required']) !!}
+	{!! Form::textarea('favouriteAspects', null, $attributes = ['placeholder' => 'What did you like most about your course?', 'rows' => '7', 'required' => 'required']) !!}
 </div>
 
 <div>
 	{!! Form::label('leastFavouriteAspects', 'Least Favourite Aspects') !!}
-	{!! Form::textarea('leastFavouriteAspects', null, $attributes = ['placeholder' => 'What did you like least about your course?', 'rows' => '10', 'required' => 'required']) !!}
+	{!! Form::textarea('leastFavouriteAspects', null, $attributes = ['placeholder' => 'What did you like least about your course?', 'rows' => '7', 'required' => 'required']) !!}
 </div>
 
 <div>
 	{!! Form::label('courseReview', 'Overall Review') !!}
-	{!! Form::textarea('courseReview', null, $attributes = ['required' => 'required', 'placeholder' => 'Is it what you expected? What would you have wanted to know before enrolling for your course? Did classes run on time? How was the social atmosphere?', 'rows' => '12']) !!}
+	{!! Form::textarea('courseReview', null, $attributes = ['required' => 'required', 'placeholder' => 'Is it what you expected? What would you have wanted to know before enrolling for your course? Did classes run on time? How was the social atmosphere?', 'rows' => '7']) !!}
 </div>
 
 <div class="star-form">

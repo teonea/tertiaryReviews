@@ -17,7 +17,7 @@
 	<h2>Results for <span class="pink">'{{ $query }}'</span></h2>
 	@endif
 
-	{!!  $schools->render()  !!}
+	{!! str_replace('/?', '?', $schools->render()) !!}
 
 	<ul class="item-list">
 
@@ -48,6 +48,6 @@
 	<p>If your school is missing please contact us {!! link_to('contact', 'here') !!}.</p>
 @endif
 
-{!!  $schools->render()  !!}
+{!! str_replace('/?', '?', $schools->render()) !!}
 
 @stop

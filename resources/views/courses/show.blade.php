@@ -21,8 +21,10 @@
 
     <p>Below are the unbiased, honest reviews listed for <span class="b">{{ $course->courseName }}</span> which is offered at <span class="b">{{ $course->getSchoolName() }}</span>.</p>
 
-    {!! $reviews->render() !!}
-
+    @if(count($course->review) >= 5)
+    	{!! $reviews->render() !!}
+    @endif
+    
 	@foreach ($course->review as $review)
 
 	<div class="review">
@@ -86,14 +88,6 @@
 				}  ?>
 			</li>
 		</ul>
-
-		<!-- <ul class="rating-ul">
-			<li>Facilities Rating: <div class='starrr no-touch' data-rating='{{ $review->facilitiesRating }}'></div></li>
-			<li>Clarity Rating: <div class='starrr no-touch' data-rating='{{ $review->clarityRating }}'></div></li>
-			<li>Helpfulness Rating: <div class='starrr no-touch' data-rating='{{ $review->helpfulnessRating }}'></div></li>
-			<li>Job Prospects Rating: <div class='starrr no-touch' data-rating='{{ $review->jobProspectsRating }}'</li>
-			<li>Overall Rating: <div class='starrr no-touch' data-rating='{{ $review->overallRating }}'</li>
-		</ul> -->
 	</div>
 
 	<hr />

@@ -16,16 +16,15 @@
 
 	<div>
 		<label for="email">E-Mail Address</label>
-		<input type="email" name="email" id="email" value="{{ old('email') }}">
+		<input required type="email" name="email" id="email" value="{{ old('email') }}">
 	</div>
 
 	<div>
 		<label for="password">Password</label>
-		<input type="password" name="password" id="password">
+		<input required type="password" name="password" id="password">
 	</div>
 
 	<div class="checkbox-div">
-		
 			<input type="checkbox" class="checkbox" name="remember" id="remember">
 		<label for="remember"  class="checkbox-label">Remember Me</label>
 	</div>

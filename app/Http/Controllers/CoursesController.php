@@ -19,9 +19,17 @@ class CoursesController extends Controller {
 
 	}
 
+	public function overallRatingAverage() {
+
+		$result = Review::avg('overallRating');
+		return round( $result * 100 ) / 5;
+		
+	
+	}
+
 	public function index() {
 
-		$page = 'Courses';
+		$page = ' Tertiary Reviews NZ - Courses offered in New Zealand';
 		$description = 'Course listings where you can write reviews.';
 		$keywords = 'courses nz, tertiary education courses, write a review, list a course, course reviews nz';
 
@@ -39,10 +47,10 @@ class CoursesController extends Controller {
 
 	public function show($id) {
 
-		$page = 'Courses';
+		$page = ' Tertiary Reviews NZ - '.Course::where('id', $id)->first()->courseName;
 		$description = 'Tertiary Education courses provided in New Zealan where you can list courses or write reviews.';
 		$keywords = 'tertiary education course';
-
+		
 		$course = Course::findOrFail($id);
 		$reviews = Review::latest('created_at')->paginate(5);
 
@@ -52,7 +60,7 @@ class CoursesController extends Controller {
 
 	public function create() {
 
-		$page = 'List a Course';
+		$page = ' Tertiary Reviews NZ - List a Course so it can be reviewed';
 		$description = 'List a course to add to our courses database.';
 		$keywords = 'tertiary education course, add a course, list, course';
 
@@ -86,7 +94,7 @@ class CoursesController extends Controller {
 
 	public function edit($id) {
 
-		$page = 'Edit Course';
+		$page = ' Tertiary Reviews NZ - Edit - '.Course::where('id', $id)->first()->courseName;;
 		$description = 'Edit Course Details, available to admin users only.';
 		$keywords = 'edit tertiary education course';
 
@@ -124,17 +132,11 @@ class CoursesController extends Controller {
 	{	
 		try {
 		  	$course = Course::findOrFail($id);
-
 			$course->delete();
-
 			session()->flash('flash_message', 'Course successfully deleted!');
-
 	        return Redirect::route('courses.index')->with('message', 'Course successfully deleted');
-
 		} catch ( \Exception $e) {
-
 		   	session()->flash('flash_message', 'This course can not be deleted as it has been reviewed. You have to delete the reviews first.');
-
 	        return Redirect::route('courses.index')->with('message', 'Course unsuccessfully deleted');
 		}
 	}

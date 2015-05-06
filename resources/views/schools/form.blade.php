@@ -1,11 +1,11 @@
 <div>
 	{!! Form::label('schoolName', 'School Name') !!}
-	{!! Form::text('schoolName', null) !!}
+	{!! Form::text('schoolName', null, $attributes = ['required' => 'required']) !!}
 </div>
 
 <div>
 	{!! Form::label('schoolPhone', 'School Phone Number') !!}
-	{!! Form::text('schoolPhone', null) !!}
+	{!! Form::text('schoolPhone', null, $attributes = ['required' => 'required']) !!}
 </div>
 
 <div>
@@ -15,7 +15,7 @@
 
 <div>
 	{!! Form::label('schoolWebsite', 'School Website') !!}
-	{!! Form::text('schoolWebsite', null) !!}
+	{!! Form::text('schoolWebsite', null, $attributes = ['required' => 'required']) !!}
 </div>
 
 <div>
@@ -45,5 +45,5 @@
 
 <div>
 	{!! Form::label('regionName', 'Region Name') !!}
-	{!! Form::text('regionName', null) !!}
+	{!! Form::text('regionName', null, $attributes = ['required' => 'required']) !!}
 </div>

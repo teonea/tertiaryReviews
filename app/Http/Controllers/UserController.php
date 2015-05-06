@@ -4,7 +4,7 @@ use App\User;
 use App\Http\Requests;
 use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
-
+use Auth;
 use Illuminate\Http\Request;
 
 class UserController extends Controller {
@@ -23,7 +23,7 @@ class UserController extends Controller {
 	public function index()
 	{
 
-		$page = 'Admin Control';
+		$page = 'Tertiary Reviews NZ - '.Auth::user()->name;
 		$description = 'Admin Control over Tertiary Reviews NZ website.';
 		$keywords = 'reviews';
 
@@ -39,7 +39,7 @@ class UserController extends Controller {
 	public function create()
 	{
 
-		$page = 'Register';
+		$page = ' Tertiary Reviews NZ - Register Admin User';
 		$description = 'Register another admin user.';
 		$keywords = 'register Tertiary reviews';
 
@@ -78,7 +78,7 @@ class UserController extends Controller {
 	public function edit($id)
 	{
 
-		$page = 'Edit Details';
+		$page = 'Tertiary Reviews NZ - Edit - '.Auth::user()->name;
 		$description = 'Edit admin user details.';
 		$keywords = 'edit user details, tertiary reviews';
 

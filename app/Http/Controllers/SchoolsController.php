@@ -19,7 +19,7 @@ class SchoolsController extends Controller {
 
 	public function index() {
 
-		$page = 'Schools';
+		$page = 'Tertiary Reviews NZ - Education Providers';
 		$description = 'Search tertiary Education Institutions provided in New Zealan where you can list courses or write reviews.';
 		$keywords = 'search tertiary education providers, Institutions, schools, university';
 
@@ -37,7 +37,7 @@ class SchoolsController extends Controller {
 
 	public function show($id) {
 
-		$page = 'Schools';
+		$page = 'Tertiary Reviews NZ - '.School::where('id', $id)->first()->schoolName;
 		$description = 'Tertiary Education Institutions provided in New Zealan where you can list courses or write reviews.';
 		$keywords = 'tertiary education providers, Institutions, schools, university, polytech, higher education, tertiary';
 
@@ -49,7 +49,7 @@ class SchoolsController extends Controller {
 
 	public function showcourses($id) {
 
-		$page = 'Schools Courses';
+		$page = 'Tertiary Reviews NZ - '.School::where('id', $id)->first()->schoolName.' - Courses';
 		$description = 'Tertiary Education Institutions courses in which they provide. You may add courses to our database and write reviews.';
 		$keywords = 'schools courses nz, new zealand courses, tertiary education courses';
 
@@ -71,7 +71,7 @@ class SchoolsController extends Controller {
 
 	public function create() {
 
-		$page = 'List a School';
+		$page = 'Tertiary Reviews NZ - List a Tertiary Education Provider ';
 		$description = 'List a Tertiary Education Provider, only admin may do this.';
 		$keywords = 'list school';
 
@@ -91,7 +91,7 @@ class SchoolsController extends Controller {
 
 	public function edit($id) {
 
-		$page = 'Edit School';
+		$page = 'Tertiary Reviews NZ - Edit - '.School::where('id', $id)->first()->schoolName;
 		$description = 'Edit Tertiary Education Institution details.';
 		$keywords = 'edit school, edit details, tertiary education provider';
 

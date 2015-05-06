@@ -23,7 +23,7 @@ class ReviewsController extends Controller {
 
 	public function index() {
 
-		$page = 'Reviews';
+		$page = 'Tertiary Reviews NZ - Honest, Unbiased Reviews on different tertiary education courses around New Zealand';
 		$description = 'Honest, unbiased reviews on tertiary education courses around New Zealand.';
 		$keywords = 'university reviews, tertiary education reviews, polytech reviews, course reviews, courses new zealand, education new zealand';
 
@@ -41,7 +41,7 @@ class ReviewsController extends Controller {
 
 	public function show($id) {
 
-		$page = 'Reviews';
+		$page = 'Tertiary Reviews NZ - '.Review::where('id', $id)->first()->title;
 		$description = 'Honest, unbiased reviews on tertiary education courses around New Zealand.';
 		$keywords = 'university reviews, nz, tertiary education reviews, polytech reviews, course reviews, courses new zealand, education new zealand';
 
@@ -54,7 +54,7 @@ class ReviewsController extends Controller {
 
 	public function create() {
 
-		$page = 'Write Review';
+		$page = 'Tertiary Reviews NZ - Write a Review';
 		$description = 'Write honest, unbiased reviews on tertiary education courses around New Zealand.';
 		$keywords = 'write reviews, nz, review tertiary institutes, review courses, education';
 
@@ -89,7 +89,7 @@ class ReviewsController extends Controller {
 
 	public function edit($id) {
 
-		$page = 'Edit Review';
+		$page = 'Tertiary Reviews NZ - Edit - '.$page = Review::where('id', $id)->first()->title;
 		$description = 'Edit Reviews posted in Tertiary Reviews NZ.';
 		$keywords = 'edit reviews';
 

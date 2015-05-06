@@ -70,7 +70,7 @@ class Course extends Model {
 	}
 
 	public function jobProspectsRatingAverage() {
-
+		
 		$result = Review::avg('jobProspectsRating');
 		return round( $result * 100 ) / 5;
 	

@@ -17,22 +17,27 @@
 
 	<div>
 		<label for="name">Name</label>
-		<input type="text" name="name" id="name" value="{{ old('name') }}">
+		<input required type="text" name="name" id="name" value="{{ old('name') }}">
 	</div>
 
 	<div>
 		<label for="email">E-Mail Address</label>
-		<input type="email" name="email" id="email" value="{{ old('email') }}">
+		<input required type="email" name="email" id="email" value="{{ old('email') }}">
 	</div>
 
 	<div>
 		<label for="password">Password</label>
-		<input type="password" name="password" id="password">
+		<input required type="password" name="password" id="password">
 	</div>
 
 	<div>
 		<label for="password_confirmation">Confirm Password</label>
-		<input type="password" name="password_confirmation" id="password_confirmation">
+		<input required type="password" name="password_confirmation" id="password_confirmation">
+	</div>
+
+	<div class="checkbox-div">
+		{!! Form::checkbox('terms', 1, null, $attributes = ['class' => 'checkbox', 'required' => 'required']) !!}
+		<label for="terms" class="checkbox-label">I agree to the {!! link_to('termsAndConditions', 'Terms and Conditions') !!}</label>
 	</div>
 
 	<div>

@@ -12,7 +12,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' />
 	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="{{ asset('/css/starrr.min.css') }}">
-	<title>Tertiary Reviews - {{ $page }}</title>
+	<title>{{ $page }}</title>
 </head>
 <body>
 

@@ -31,7 +31,7 @@ Route::resource('courses', 'CoursesController');
 
 Route::resource('schools', 'SchoolsController');
 Route::get('schools/{id}/courses', 'SchoolsController@showcourses');
-Route::get('/ajax-course', function(){
+Route::get('http://hannah.teonea.yoobee.net.nz/_Assignments/WE06/public_html/tertiaryReviews/public/index.php/ajax-course', function(){
 
 	$school_id = Input::get('school_id');
 	$sub_id = Input::get('sub_id');

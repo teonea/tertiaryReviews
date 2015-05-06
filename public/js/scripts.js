@@ -20,7 +20,7 @@ $('#subject_id').on('change',function(e){
 	var school_id = $('#school_id').val();
 	var sub_id = e.target.value;
 	//ajax
-	$.get('/ajax-course?sub_id=' + sub_id + "&school_id=" + school_id, function(data){
+	$.get('http://hannah.teonea.yoobee.net.nz/_Assignments/WE06/public_html/tertiaryReviews/public/index.php/ajax-course?sub_id=' + sub_id + "&school_id=" + school_id, function(data){
 		//success data
 		$('#course_id').empty();
 		

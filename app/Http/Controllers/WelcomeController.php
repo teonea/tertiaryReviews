@@ -36,7 +36,7 @@ class WelcomeController extends Controller {
 	public function home()
 	{
 
-		$page = 'Home';
+		$page = 'Tertiary Reviews NZ';
 		$description = 'Welcome to Tertiary Reviews. New Zealand\'s biggest collection of reviews on tertiary education courses.';
 		$keywords = 'home, welcome, Tertiary reviews';
 

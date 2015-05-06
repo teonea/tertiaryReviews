@@ -160,6 +160,7 @@ h4 a:active {
 
 .sitemap-ul li, .sitemap-ul ul li {
 	padding-bottom: 8px;
+	font-weight: lighter;
 }
 
 .sitemap-ul li a, .sitemap-ul ul li a {

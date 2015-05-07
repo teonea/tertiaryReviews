@@ -14,9 +14,10 @@
 	<h3>No courses listed for {{ $school->schoolName }}, you can list a course <span class="b pink">{!! link_to('courses/create', 'here') !!}</span>.</h3>
 @endif
 
-<p>This search is not working yet mada fukka waaaah</p>
-
 @include('search.index')
+
+{!! $courses->render() !!}
+
 
 @if ($courses->count())
 	
@@ -27,7 +28,7 @@
 	@if (count($courses) >= 1)
 
 		<ul class="item-list">
-			@foreach ($school->courses as $course)
+			@foreach ($courses as $course)
 			<li><a href="{{ url('/courses', $course->id) }}">{{ $course->courseName }}</a><hr /></li>
 			@endforeach
 			
@@ -46,5 +47,7 @@
 	@endif
 	<p>If your school or course is missing please contact us {!! link_to('contact', 'here') !!}.</p>
 @endif
+
+{!! $courses->render() !!}
 
 @stop

@@ -54,14 +54,13 @@ class SchoolsController extends Controller {
 		$keywords = 'schools courses nz, new zealand courses, tertiary education courses';
 
 		$query = Input::get('q');
-
 		$school = School::findOrFail($id);
 		$data = School::where('id', $id)->with('courses');
 		
 		if($query) {
-			$courses = Course::where('courseName', 'LIKE', "%$query%")->orderBy('courseName', 'ASC')->paginate(15);
+			$courses = Course::where('courseName', 'LIKE', "%$query%")->where('school_id', '=', $id)->orderBy('courseName', 'ASC')->paginate(15);
 		} else {
-			$courses = Course::orderBy('courseName', 'ASC')->paginate(15);
+			$courses = Course::orderBy('courseName', 'ASC')->where('school_id', '=', $id)->paginate(15);
 		}
 
 		return view('schools.showcourses', compact('query', 'data', 'school','courses', 'page', 'description', 'keywords'));

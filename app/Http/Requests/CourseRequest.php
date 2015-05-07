@@ -26,7 +26,8 @@ class CourseRequest extends Request {
 			'school_id' => 'required',
 			'subject_id' => 'required',
 			'courseName' => 'required|min:3|max:300',
-			'terms' => 'required'
+			'terms' => 'required',
+			'g-recaptcha-response' => 'required|recaptcha'
 		];
 	}
 

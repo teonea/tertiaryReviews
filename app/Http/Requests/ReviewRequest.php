@@ -36,7 +36,8 @@ class ReviewRequest extends Request {
 			'helpfulnessRating' => 'integer|required|min:1|max:5',
 			'jobProspectsRating' => 'integer|required|min:1|max:5',
 			'overallRating' => 'integer|required|min:1|max:5',
-			'terms' => 'required'
+			'terms' => 'required',
+			'g-recaptcha-response' => 'required|recaptcha'
 		];
 	}
 

@@ -215,13 +215,7 @@ h4 a:active {
 }
 
 .star-form input {
-	display: none;
-}
-
-@-moz-document url-prefix() {
-    .star-form input {
-    	display: block;
-    }
+	display: block;
 }
 
 .star-form .starrr {

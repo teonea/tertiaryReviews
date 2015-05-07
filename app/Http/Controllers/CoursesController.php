@@ -76,19 +76,22 @@ class CoursesController extends Controller {
 
 		Course::create($request->all());
 
-		$secret   = '6LcKBgYTAAAAAJTKa3Y3NfkNdIa0L9Sb9nzauQVi'; 
-	    $response = Input::get('g-recaptcha-response');
-	    $url      = 'https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$response;
-	    $jsonObj  = file_get_contents($url);
-	    $json     = json_decode($jsonObj, true);
+		// $secret   = '6LcKBgYTAAAAAJTKa3Y3NfkNdIa0L9Sb9nzauQVi'; 
+	 //    $response = Input::get('g-recaptcha-response');
+	 //    $url      = 'https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$response;
+	 //    $jsonObj  = file_get_contents($url);
+	 //    $json     = json_decode($jsonObj, true);
 
-	    if ($json['success']==true) {
-	    	session()->flash('flash_message', 'Course successfully posted!');	
-			return redirect('courses');
-	    } else {
-	    	session()->flash('flash_message', 'Google Recaptcha Error: You must check that you are not a robot!');
-	    	return Redirect::back()->with('message','Unsuccessful!') ->withInput();
-	    }
+	 //    if ($json['success']==true) {
+	 //    	session()->flash('flash_message', 'Course successfully posted!');	
+		// 	return redirect('courses');
+	 //    } else {
+	 //    	session()->flash('flash_message', 'Google Recaptcha Error: You must check that you are not a robot!');
+	 //    	return Redirect::back()->with('message','Unsuccessful!') ->withInput();
+	 //    }
+
+		session()->flash('flash_message', 'Course successfully posted!');	
+		return redirect('courses');
 
 	}
 
